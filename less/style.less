@@ -6,11 +6,87 @@ body {
   height: 100%;
 }
 
-.main,
 .container {
+  position: relative;
+  background: #fff;
   min-height: 100%;
+  .box-shadow(-2px 0 15px rgba(0, 0, 0, 0.4));
+}
+.col-left {
+  position: absolute;
+  background: #9780ce;
+  #gradient>.vertical(#472e86; #9780ce; 44px; 670px);
+  width: 22.2222%;
+  padding-top: 44px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  .box-shadow(4px 0 4px rgba(0, 0, 0, 0.2));
+  .tree {
+    position: absolute;
+    background: url("../img10/drzewo.png") no-repeat 0 0;
+    width: 335px;
+    height: 481px;
+    top: 44px;
+    right: 0;
+  }
+  > .col-md-9 {
+    min-height: 480px;
+  }
 }
 
-.col-left {
-  background: #fff;
+.top-banner {
+  > div {
+    background: #d5cad9;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    height: 44px;
+  }
+  > .col-md-2 {
+    z-index: 1;
+    background: #9e90bc;
+  }
+}
+
+.top-header {
+  > .col-md-2 {
+    z-index: 1;
+    h1 {
+      margin: 10px 0;
+      font-family: @font-family-serif;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1;
+      text-shadow: 2px 2px 6px #000000, 0 0 1px #000000;
+      text-align: right;
+      text-transform: uppercase;
+      .big {
+        font-size: 31px;
+      }
+      .x {
+        display: inline-block;
+        margin: 0 -3px -30px -10px;
+        font-size: 44px;
+        vertical-align: -18px;
+      }
+    }
+  }
+}
+
+@media (min-width: @container-sm) {
+
+}
+
+@media (min-width: @container-md) {
+
+}
+
+@media (min-width: @container-lg) {
+  .top-header {
+    > .col-md-2 {
+      h1 {
+        padding-left: 40px;
+      }
+    }
+  }
 }
