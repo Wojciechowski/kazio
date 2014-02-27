@@ -1,0 +1,74 @@
+html,
+body {
+  height: 100%;
+}
+.container {
+  position: relative;
+  background: #fff;
+  min-height: 100%;
+  -webkit-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.4);
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.4);
+}
+.col-left {
+  position: absolute;
+  background: #9780ce;
+  background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
+  background-image: linear-gradient(to bottom, #472e86 44px, #9780ce 670px);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff472e86', endColorstr='#ff9780ce', GradientType=0);
+  width: 22.2222%;
+  padding-top: 44px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+}
+.col-left .tree {
+  position: absolute;
+  background: url("../img10/drzewo.png") no-repeat 0 0;
+  width: 335px;
+  height: 481px;
+  top: 44px;
+  right: 0;
+}
+.col-left > .col-md-9 {
+  min-height: 480px;
+}
+.top-banner > div {
+  background: #d5cad9;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  height: 44px;
+}
+.top-banner > .col-md-2 {
+  z-index: 1;
+  background: #9e90bc;
+}
+.top-header > .col-md-2 {
+  z-index: 1;
+}
+.top-header > .col-md-2 h1 {
+  margin: 10px 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 2px 2px 6px #000000, 0 0 1px #000000;
+  text-align: right;
+  text-transform: uppercase;
+}
+.top-header > .col-md-2 h1 .big {
+  font-size: 31px;
+}
+.top-header > .col-md-2 h1 .x {
+  display: inline-block;
+  margin: 0 -3px -30px -10px;
+  font-size: 44px;
+  vertical-align: -18px;
+}
+@media (min-width: 1160px) {
+  .top-header > .col-md-2 h1 {
+    padding-left: 40px;
+  }
+}
