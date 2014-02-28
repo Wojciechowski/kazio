@@ -9,46 +9,55 @@ body {
   -webkit-box-shadow: -2px 0 15px rgba(0, 0, 0, 0.4);
   box-shadow: -2px 0 15px rgba(0, 0, 0, 0.4);
 }
-.col-left {
-  position: absolute;
-  background: #9780ce;
-  background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
-  background-image: linear-gradient(to bottom, #472e86 44px, #9780ce 670px);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff472e86', endColorstr='#ff9780ce', GradientType=0);
-  width: 22.2222%;
-  padding-top: 44px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  -webkit-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+.top-banner {
+  margin-bottom: 0;
 }
-.col-left .tree {
+.top-banner .col-md-2 {
+  background: #9e90bc;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+}
+.top-banner .navbar-toggle {
+  float: none;
+  margin-left: 10px;
+}
+.top-banner .navbar-toggle .icon-bar {
+  background-color: #e1d9e4;
+}
+.top-banner .navbar-toggle:focus .icon-bar,
+.top-banner .navbar-toggle:hover .icon-bar {
+  background-color: #9780ce;
+}
+.top-banner .col-md-7 {
+  background: #e1d9e4;
+}
+.top-banner p {
+  margin: 3px 0;
+}
+.top-header {
+  position: relative;
+  background-image: -webkit-linear-gradient(left, color-stop(#ffffff 60%), color-stop(#472e86 75%));
+  background-image: linear-gradient(to right, #ffffff 60%, #472e86 75%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff472e86', GradientType=1);
+  height: 128px;
+}
+.top-header .logo {
+  background: url("../img10/wkrainiechopina_small.png") no-repeat;
+  width: 226px;
+  height: 101px;
+}
+.main-brand {
   position: absolute;
-  background: url("../img10/drzewo.png") no-repeat 0 0;
-  width: 335px;
-  height: 481px;
-  top: 44px;
+  background: url("../img10/drzewo_small.png") no-repeat right top;
+  top: 0;
   right: 0;
 }
-.col-left > .col-md-9 {
-  min-height: 480px;
-}
-.top-banner > div {
-  background: #d5cad9;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  height: 44px;
-}
-.top-banner > .col-md-2 {
-  z-index: 1;
-  background: #9e90bc;
-}
-.top-header > .col-md-2 {
-  z-index: 1;
-}
-.top-header > .col-md-2 h1 {
+.main-brand h1 {
   margin: 10px 0;
+  width: 200px;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #fff;
   font-size: 18px;
@@ -58,16 +67,56 @@ body {
   text-align: right;
   text-transform: uppercase;
 }
-.top-header > .col-md-2 h1 .big {
+.main-brand h1 .big {
   font-size: 31px;
 }
-.top-header > .col-md-2 h1 .x {
+.main-brand h1 .x {
   display: inline-block;
   margin: 0 -3px -30px -10px;
   font-size: 44px;
   vertical-align: -18px;
 }
-@media (min-width: 1160px) {
+@media (min-width: 992px) {
+  .col-left {
+    position: absolute;
+    background: #9780ce;
+    background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
+    background-image: linear-gradient(to bottom, #472e86 44px, #9780ce 670px);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff472e86', endColorstr='#ff9780ce', GradientType=0);
+    width: 22.2222%;
+    padding-top: 44px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+  }
+  .col-left .tree {
+    position: absolute;
+    background: url("../img10/drzewo.png") no-repeat 0 0;
+    width: 335px;
+    height: 481px;
+    top: 44px;
+    right: 0;
+  }
+  .col-left > .col-md-9 {
+    min-height: 480px;
+  }
+  .top-banner > div {
+    background: #d5cad9;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 44px;
+  }
+  .top-banner > .col-md-2 {
+    z-index: 1;
+    background: #9e90bc;
+  }
+  .top-header > .col-md-2 {
+    z-index: 1;
+  }
+}
+@media (min-width: 1200px) {
   .top-header > .col-md-2 h1 {
     padding-left: 40px;
   }

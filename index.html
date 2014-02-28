@@ -8,20 +8,44 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
 </head>
 <body>
 
 <div class="container">
-    <aside class="row top-banner" rule="banner">
-        <div class="col-md-2">.col-md-2</div>
-        <div class="col-md-7">.col-md-7</div>
+    <!-- Fixed navbar -->
+    <aside class="row top-banner navbar-default navbar-inner" rule="banner">
+        <div class="col-md-2 navbar-header">
+            współorganizatorzy:
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="col-md-7 nav-collapse collapse">
+            <ul class="nav">
+                <li class="active"><span class="brand"></span> GMINA KAMPINOS</li>
+                <li><span class="brand"></span> GMINA KAMPINOS 1</li>
+                <li><span class="brand"></span> GMINA KAMPINOS 2</li>
+            </ul>
+        </div><!--/.nav-collapse -->
     </aside>
+
     <header class="row top-header" rule="header">
         <div class="col-md-2">
-            <h1><span class="x">X</span> jubileuszowy FESTIWAL MUZYCZNY <span class="big">W&nbsp;KRAINIE CHOPINA</span></h1>
+            <div class="main-brand">
+                <h1><span class="x">X</span> jubileuszowy FESTIWAL MUZYCZNY <span class="big">W&nbsp;KRAINIE CHOPINA</span></h1>
+            </div>
         </div>
-        <div class="col-md-7 col-right">.col-md-7</div>
+        <div class="col-md-7 col-right">
+            <div class="logo">Logo</div>
+            <div class="terms">X jubileuszowa edycja 20 czerwca - 20 wrzwśnia 2014</div>
+        </div>
     </header>
+
     <div class="row main">
         <div class="col-left">
             <div class="tree"></div>
@@ -32,6 +56,12 @@
         <section class="col-md-7 col-md-offset-2 col-right">.col-md-7</section>
     </div>
 </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap/transition.js"></script>
+<script src="js/bootstrap/collapse.js"></script>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
