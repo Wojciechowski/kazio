@@ -45,12 +45,17 @@ body {
 
 .top-header {
   position: relative;
-  #gradient>.horizontal(#ffffff; #472e86; 60%; 75%);
+  #gradient>.horizontal(#ffffff; #472e86; 55%; 80%);
   height: 128px;
   .logo {
     background: url("../img10/wkrainiechopina_small.png") no-repeat;
     width: 226px;
     height: 101px;
+    margin: 5px 50% -8px auto;
+  }
+  .terms {
+    width: 200px;
+    line-height: 1.1;
   }
 }
 .main-brand {
@@ -58,8 +63,9 @@ body {
   background: url("../img10/drzewo_small.png") no-repeat right top;
   top: 0;
   right: 0;
+  z-index: 1;
   h1 {
-    margin: 10px 0;
+    margin: 4px 10px;
     width: 200px;
     font-family: @font-family-serif;
     color: #fff;
@@ -77,6 +83,31 @@ body {
       margin: 0 -3px -30px -10px;
       font-size: 44px;
       vertical-align: -18px;
+    }
+  }
+}
+.collapse-switch {
+  position: relative;
+  background: @purple-dark;
+  padding-right: 65px;
+  margin: 0 -10px;
+  color: rgba(255,255,255,.7);
+  font-weight: 600;
+  text-align: right;
+  .transition(all .3s);
+  .navbar-toggle {
+    position: absolute;
+    background: @purple-dark;
+    opacity: 0.5;
+    margin: 0;
+    top: 22px;
+    right: 65px;
+    z-index: 1;
+    .icon-bar {
+      background-color: @purple-lighter;
+    }
+    &:hover {
+      opacity: 1;
     }
   }
 }
