@@ -154,6 +154,7 @@ body {
     overflow: hidden;
   }
   .top-banner .sponsors ul {
+    position: relative;
     display: table;
     height: 44px;
     margin: 0;
@@ -174,10 +175,12 @@ body {
     position: absolute;
     display: block;
     height: 44px;
+    width: auto;
+    min-width: 35px;
     margin-top: -22px;
     top: 50%;
-    line-height: 42px;
-    vertical-align: middle;
+    left: 2px;
+    line-height: 41px;
   }
   .top-banner .sponsors .brand span,
   .top-banner .sponsors .brand img {

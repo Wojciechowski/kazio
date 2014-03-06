@@ -160,6 +160,7 @@ body {
     .sponsors {
       overflow: hidden;
       ul {
+        position: relative;
         display: table;
         height: @height;
         margin: 0;
@@ -181,9 +182,12 @@ body {
         position: absolute;
         display: block;
         height: @height;
+        width: auto;
+        min-width: 35px;
         margin-top: -@height / 2;
         top: 50%;
-        line-height: @height - 2;
+        left: 2px;
+        line-height: @height - 3;
         span,
         img {
           vertical-align: middle;
