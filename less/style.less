@@ -14,12 +14,12 @@ body {
 }
 .top-banner {
   margin-bottom: 0;
+  line-height: 1;
   .col-md-2 {
     background: @purple-light;
     font-size: 14px;
     font-weight: 600;
     color: rgba(255,255,255,.7);
-    line-height: 1;
   }
   .navbar-toggle {
     float: none;
@@ -141,14 +141,57 @@ body {
   }
 
   .top-banner {
+    @height: 44px;
     > div {
-      background: #d5cad9;
+      position: relative;
+      background: #e1d9e4;
       border-bottom: 1px solid rgba(0,0,0,.2);
-      height: 44px;
+      height: @height;
+      line-height: @height - 2;
     }
     > .col-md-2 {
       z-index: 1;
       background: #9e90bc;
+      text-align: right;
+    }
+    > .col-md-7 {
+      display: block;
+    }
+    .sponsors {
+      overflow: hidden;
+      ul {
+        display: table;
+        height: @height;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        position: relative;
+        display: none;
+        height: @height;
+//        top: -@height;
+        vertical-align: middle;
+        line-height: 1;
+        &.active {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+      .brand {
+        position: absolute;
+        display: block;
+        height: @height;
+        margin-top: -@height / 2;
+        top: 50%;
+        line-height: @height - 2;
+        span,
+        img {
+          vertical-align: middle;
+        }
+      }
+      p {
+        display: none;
+      }
     }
   }
 
