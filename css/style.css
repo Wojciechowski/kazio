@@ -48,10 +48,13 @@ body {
   background: url("../img10/wkrainiechopina_small.png") no-repeat;
   width: 226px;
   height: 101px;
-  margin: 5px 50% -8px auto;
+  margin: 5px 50% -10px auto;
+  text-indent: -10000px;
 }
 .top-header .terms {
   width: 200px;
+  color: #6a49b9;
+  font-weight: 600;
   line-height: 1.1;
 }
 .main-brand {
@@ -189,12 +192,27 @@ body {
   .top-banner .sponsors p {
     display: none;
   }
+  .top-header {
+    background-image: none;
+  }
   .top-header > .col-md-2 {
     z-index: 1;
   }
-}
-@media (min-width: 1200px) {
-  .top-header > .col-md-2 h1 {
-    padding-left: 40px;
+  .top-header .box_extra {
+    float: right;
+    background-color: #31708f;
+    height: 133px;
+    width: 200px;
+    margin-right: -10px;
+  }
+  .top-header .logo {
+    position: static;
+    background: url("../img10/logo_f1.png") no-repeat center;
+    height: 133px;
+    width: auto;
+    margin: 0 200px 0 0;
+  }
+  .top-header .terms {
+    width: auto;
   }
 }
