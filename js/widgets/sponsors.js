@@ -6,15 +6,13 @@
  * create: 04-03-2014
  */
 
-steal(
-    'js/jquery.min.js',
-    'js/widgets/sponsors.js',
-function(jQuery){
+steal('js/jquery.min.js', function(jQuery){
     /**
-     * Top banner xx
+     * Top banner Sponsors
      */
-    $.fn.xx = function(param) {
+    $.fn.Sponsors = function(param) {
         param = {
+            padd: 10,
             timer: 800,
             pause: 2000
         }
@@ -23,6 +21,9 @@ function(jQuery){
 
             move2 = function(o){
                 o.css({'margin-top': height * -1});
+                if ($('.active', o).css('padding-left') == param.padd + 'px') {
+                    $('.active', o).css('padding-left', $('.active img', o).width() + param.padd);
+                }
                 o.animate({
                     'margin-top': 0
                 }, param.timer, function(){
@@ -69,11 +70,23 @@ function(jQuery){
             },
 
             init = function(){
-                var sponsor,
-                    padd = 10,
-                    i = 0;
-
                 ul = $('ul', that);
+
+                var sponsor,
+                    img = $('img', ul),
+                    i = 0,
+
+                    brand = function(){
+                        img.each(function(){
+                            if (img.index($(this)) == 0 && $(this).outerWidth() == 0) {
+                                setTimeout(brand, 50);
+                                return;
+                            }
+                            $(this).parent().css('padding-left', ($(this).outerWidth() + param.padd) + 'px');
+                            $(this).wrap('<span class="brand"/>');
+                        })
+                    };
+
                 $('.sponsors-li', that).children().each(function(){
                     if (!$(this).is('ul')) {
                         sponsor = $(this).text();
@@ -83,11 +96,8 @@ function(jQuery){
                             $('.spons-h').html(sponsor + ':');
                         }
                     }
-                })
-                $('.imagemask', ul).each(function(){ // zamienić na 'img'
-                    $(this).parent().css('padding-left', ($(this).outerWidth() + padd) + 'px');
-                    $(this).wrap('<span class="brand"/>');
-                })
+                });
+                brand();
                 if (!$('.active', ul).is('li')) {
                     sponsor = $('ul:first-of-type li:first').addClass('active').parent().attr('data-sponsor');
                     $('.spons-h').html(sponsor + ':');
@@ -105,7 +115,7 @@ function(jQuery){
     };
 
     $(document).ready(function() {
-//        $('.sponsors').Sponsors();
+        $('.sponsors').Sponsors();
     });
 
 })
