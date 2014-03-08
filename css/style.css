@@ -138,43 +138,52 @@ body {
   .col-left > .col-md-9 {
     min-height: 480px;
   }
-  .top-banner > div {
+  .sponsors > div {
     position: relative;
     background: #e1d9e4;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     height: 44px;
     line-height: 42px;
   }
-  .top-banner > .col-md-2 {
-    z-index: 1;
+  .sponsors .sponsors-h {
+    position: relative;
     background: #9e90bc;
     text-align: right;
+    z-index: 1;
   }
-  .top-banner > .col-md-7 {
+  .sponsors .spons-h {
+    position: absolute;
     display: block;
+    margin-top: 0;
+    height: 44px;
+    right: 10px;
   }
-  .top-banner .sponsors {
+  .sponsors .sponsors-h,
+  .sponsors .sponsors-li {
     overflow: hidden;
   }
-  .top-banner .sponsors ul {
-    position: relative;
+  .sponsors .sponsors-li {
+    display: block;
+  }
+  .sponsors .sponsors-li ul {
+    position: absolute;
     display: table;
     height: 44px;
     margin: 0;
     padding: 0;
   }
-  .top-banner .sponsors li {
+  .sponsors .sponsors-li li {
     position: relative;
     display: none;
     height: 44px;
     vertical-align: middle;
     line-height: 1;
   }
-  .top-banner .sponsors li.active {
+  .sponsors .sponsors-li li.active {
     display: table-cell;
     vertical-align: middle;
   }
-  .top-banner .sponsors .brand {
+  .sponsors .sponsors-li .brand {
     position: absolute;
     display: block;
     height: 44px;
@@ -185,11 +194,11 @@ body {
     left: 2px;
     line-height: 41px;
   }
-  .top-banner .sponsors .brand span,
-  .top-banner .sponsors .brand img {
+  .sponsors .sponsors-li .brand span,
+  .sponsors .sponsors-li .brand img {
     vertical-align: middle;
   }
-  .top-banner .sponsors p {
+  .sponsors .sponsors-li p {
     display: none;
   }
   .top-header {

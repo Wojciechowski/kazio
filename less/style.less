@@ -143,7 +143,7 @@ body {
     }
   }
 
-  .top-banner {
+  .sponsors {
     @height: 44px;
     > div {
       position: relative;
@@ -152,18 +152,27 @@ body {
       height: @height;
       line-height: @height - 2;
     }
-    > .col-md-2 {
-      z-index: 1;
+    .sponsors-h {
+      position: relative;
       background: #9e90bc;
       text-align: right;
+      z-index: 1;
     }
-    > .col-md-7 {
+    .spons-h {
+      position: absolute;
       display: block;
+      margin-top: 0;
+      height: @height;
+      right: 10px;
     }
-    .sponsors {
+    .sponsors-h,
+    .sponsors-li {
       overflow: hidden;
+    }
+    .sponsors-li {
+      display: block;
       ul {
-        position: relative;
+        position: absolute;
         display: table;
         height: @height;
         margin: 0;
@@ -173,7 +182,6 @@ body {
         position: relative;
         display: none;
         height: @height;
-//        top: -@height;
         vertical-align: middle;
         line-height: 1;
         &.active {
