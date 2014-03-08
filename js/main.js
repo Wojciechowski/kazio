@@ -6,7 +6,7 @@
  * create: 04-03-2014
  */
 
-(function($) {
+steal('js/jquery.min.js', function(jQuery){
     /**
      * Top banner Sponsors
      */
@@ -106,5 +106,6 @@
     $(document).ready(function() {
         $('.sponsors').Sponsors();
     });
-}(jQuery));
+
+})
 
