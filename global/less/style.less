@@ -1,0 +1,323 @@
+@import "variables";
+@import "mixins";
+
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  background: #fff;
+  min-height: 100%;
+  .box-shadow(-2px 0 15px rgba(0, 0, 0, 0.4));
+}
+.top-banner {
+  margin-bottom: 0;
+  line-height: 1;
+  .col-md-2 {
+    background: @purple-light;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,.7);
+  }
+  .navbar-toggle {
+    float: none;
+    margin-left: 10px;
+    .icon-bar {
+      background-color: @purple-lighter;
+    }
+    &:focus,
+    &:hover {
+      .icon-bar {
+        background-color: @purple;
+      }
+    }
+  }
+  p {
+    margin: 3px 0;
+  }
+}
+
+.top-header {
+  position: relative;
+  #gradient>.horizontal(#ffffff; #472e86; 55%; 80%);
+  height: 128px;
+  .logo {
+    background: url("../img10/wkrainiechopina_small.png") no-repeat;
+    width: 226px;
+    height: 101px;
+    margin: 5px 50% -10px auto;
+    text-indent: -10000px;
+  }
+  .terms {
+    width: 200px;
+    color: darken(@purple, 15%);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+}
+.main-brand {
+  position: absolute;
+  background: url("../img10/drzewo_small.png") no-repeat right top;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  h1 {
+    margin: 4px 10px;
+    width: 200px;
+    font-family: @font-family-serif;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    text-shadow: 2px 2px 6px #000000, 0 0 1px #000000;
+    text-align: right;
+    text-transform: uppercase;
+    .big {
+      font-size: 31px;
+    }
+    .x {
+      display: inline-block;
+      margin: 0 -3px -30px -10px;
+      font-size: 44px;
+      vertical-align: -18px;
+    }
+  }
+}
+.collapse-switch {
+  position: relative;
+  background: @purple-dark;
+  padding-right: 65px;
+  margin: 0 -10px;
+  color: rgba(255,255,255,.7);
+  font-weight: 600;
+  text-align: right;
+  .transition(all .3s);
+  .navbar-toggle {
+    position: absolute;
+    background: @purple-dark;
+    opacity: 0.5;
+    margin: 0;
+    top: 22px;
+    right: 65px;
+    z-index: 1;
+    .icon-bar {
+      background-color: @purple-lighter;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.languages {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  ul {
+    background-color: #fff;
+    list-style: none;
+    box-shadow: 0 0 5px rgba(0,0,0,.6);
+    padding: 0;
+  }
+  a {
+    display: inline-block;
+    background: url("../img10/languages.png") no-repeat 0 0;
+    width: 21px;
+    height: 21px;
+    text-indent: -10000px;
+    .opacity(.5);
+    .transition(all .3s);
+    &.uk {
+      background-position: 0 -21px;
+    }
+  }
+  a:hover,
+  .active a {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+  .sponsors {
+    @height: 44px;
+    > div {
+      position: relative;
+      background: #e1d9e4;
+      border-bottom: 1px solid rgba(0,0,0,.2);
+      height: @height;
+      line-height: @height - 2;
+    }
+    .sponsors-h {
+      position: relative;
+      background: #9e90bc;
+      text-align: right;
+      z-index: 1;
+    }
+    .spons-h {
+      position: absolute;
+      display: block;
+      margin-top: 0;
+      height: @height;
+      right: 10px;
+    }
+    .sponsors-h,
+    .sponsors-li {
+      overflow: hidden;
+    }
+    .sponsors-li {
+      display: block;
+      ul {
+        position: absolute;
+        display: table;
+        height: @height;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        position: relative;
+        display: none;
+        height: @height;
+        vertical-align: middle;
+        line-height: 1;
+        &.active {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+      .brand {
+        position: absolute;
+        display: block;
+        height: @height;
+        width: auto;
+        min-width: 20px;
+        margin-top: -@height / 2;
+        top: 50%;
+        left: 2px;
+        line-height: @height - 3;
+        span,
+        img {
+          vertical-align: middle;
+        }
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+
+  .top-header {
+    background-image: none;
+    > .col-md-2 {
+      z-index: 1;
+    }
+    @height: 133px;
+    @width: 200px;
+    .box_extra {
+      float: right;
+      background-color: #31708f;
+      height: @height;
+      width: @width;
+      margin-right: -10px;
+    }
+    .logo {
+      position: static;
+      background: url("../img10/logo_f1.png") no-repeat center;
+      height: @height;
+      width: auto;
+      margin: 0 @width 0 0 ;
+    }
+    .terms {
+      background-color: #E1D9E4;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 0 10px;
+      margin: 0 -10px;
+      width: auto;
+      color: @text-color;
+      font-size: 16px;
+      text-align: right;
+      line-height: 1.5;
+    }
+  }
+
+  .col-left {
+    position: absolute;
+    background: #9780ce;
+    #gradient>.vertical(#472e86; #9780ce; 44px; 670px);
+    width: 22.2222%;
+    padding-top: 44px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    .box-shadow(4px 0 4px rgba(0, 0, 0, 0.2));
+    .tree {
+      position: absolute;
+      background: url("../img10/drzewo.png") no-repeat 0 0;
+      width: 335px;
+      height: 481px;
+      top: 44px;
+      right: 0;
+    }
+    > .col-md-9 {
+      min-height: 480px;
+    }
+  }
+
+  .main-brand {
+    background-image: none;
+  }
+
+  .collapse-switch {
+    display: none;
+  }
+  .nav-collapse {
+    display: block;
+  }
+  .mainmenu {
+    padding-top: 190px;
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+    > ul {
+      min-height: 280px;
+      padding: 0;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: right;
+      line-height: 1.2;
+      ul {
+        display: none;
+        margin-bottom: 15px;
+        padding: 10px 8px 0 0;
+      }
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      background: rgba(0, 0, 0, .4);
+      border-right: 2px solid #000000;
+      border-bottom: 1px solid #000000;
+      color: #F8F9BB;
+      display: block;
+      padding: 1px 3px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .top-header {
+    > .col-md-2 {
+      h1 {
+//        padding-left: 40px;
+      }
+    }
+  }
+}
