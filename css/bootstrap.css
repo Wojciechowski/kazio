@@ -268,7 +268,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
+  color: #472e86;
   background-color: #eddce8;
 }
 input,
@@ -1771,7 +1771,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373;
+  color: #8468cb;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -4294,7 +4294,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #333333;
+  color: #472e86;
 }
 .alert {
   padding: 15px;

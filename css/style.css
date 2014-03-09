@@ -30,9 +30,6 @@ body {
 .top-banner .navbar-toggle:hover .icon-bar {
   background-color: #9780ce;
 }
-.top-banner .col-md-7 {
-  background: #e1d9e4;
-}
 .top-banner p {
   margin: 3px 0;
 }
@@ -112,32 +109,6 @@ body {
   opacity: 1;
 }
 @media (min-width: 992px) {
-  .col-left {
-    position: absolute;
-    background: #9780ce;
-    background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
-    background-image: linear-gradient(to bottom, #472e86 44px, #9780ce 670px);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff472e86', endColorstr='#ff9780ce', GradientType=0);
-    width: 22.2222%;
-    padding-top: 44px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    -webkit-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
-  }
-  .col-left .tree {
-    position: absolute;
-    background: url("../img10/drzewo.png") no-repeat 0 0;
-    width: 335px;
-    height: 481px;
-    top: 44px;
-    right: 0;
-  }
-  .col-left > .col-md-9 {
-    min-height: 480px;
-  }
   .sponsors > div {
     position: relative;
     background: #e1d9e4;
@@ -222,6 +193,81 @@ body {
     margin: 0 200px 0 0;
   }
   .top-header .terms {
+    background-color: #E1D9E4;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0 10px;
+    margin: 0 -10px;
     width: auto;
+    color: #472e86;
+    font-size: 15px;
+    text-align: right;
+    line-height: 1.5;
+  }
+  .col-left {
+    position: absolute;
+    background: #9780ce;
+    background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
+    background-image: linear-gradient(to bottom, #472e86 44px, #9780ce 670px);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff472e86', endColorstr='#ff9780ce', GradientType=0);
+    width: 22.2222%;
+    padding-top: 44px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+  }
+  .col-left .tree {
+    position: absolute;
+    background: url("../img10/drzewo.png") no-repeat 0 0;
+    width: 335px;
+    height: 481px;
+    top: 44px;
+    right: 0;
+  }
+  .col-left > .col-md-9 {
+    min-height: 480px;
+  }
+  .main-brand {
+    background-image: none;
+  }
+  .collapse-switch {
+    display: none;
+  }
+  .nav-collapse {
+    display: block;
+  }
+  .mainmenu {
+    padding-top: 190px;
+  }
+  .mainmenu ul {
+    list-style: none;
+    margin: 0;
+  }
+  .mainmenu > ul {
+    min-height: 280px;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: right;
+    line-height: 1.2;
+  }
+  .mainmenu > ul ul {
+    display: none;
+    margin-bottom: 15px;
+    padding: 10px 8px 0 0;
+  }
+  .mainmenu li {
+    margin-bottom: 10px;
+  }
+  .mainmenu a {
+    background: rgba(0, 0, 0, 0.4);
+    border-right: 2px solid #000000;
+    border-bottom: 1px solid #000000;
+    color: #F8F9BB;
+    display: block;
+    padding: 1px 3px;
   }
 }
