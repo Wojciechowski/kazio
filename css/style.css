@@ -108,6 +108,36 @@ body {
 .collapse-switch .navbar-toggle:hover {
   opacity: 1;
 }
+.languages {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+.languages ul {
+  background-color: #fff;
+  list-style: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  padding: 0;
+}
+.languages a {
+  display: inline-block;
+  background: url("../img10/languages.png") no-repeat 0 0;
+  width: 21px;
+  height: 21px;
+  text-indent: -10000px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.languages a.uk {
+  background-position: 0 -21px;
+}
+.languages a:hover,
+.languages .active a {
+  opacity: 1;
+}
 @media (min-width: 992px) {
   .sponsors > div {
     position: relative;
@@ -200,7 +230,7 @@ body {
     margin: 0 -10px;
     width: auto;
     color: #472e86;
-    font-size: 15px;
+    font-size: 16px;
     text-align: right;
     line-height: 1.5;
   }

@@ -99,7 +99,7 @@ steal('js/jquery.min.js', function(jQuery){
                 });
                 brand();
                 if (!$('.active', ul).is('li')) {
-                    sponsor = $('ul:first-of-type li:first').addClass('active').parent().attr('data-sponsor');
+                    sponsor = $('ul:first-of-type li:first', that).addClass('active').parent().attr('data-sponsor');
                     $('.spons-h').html(sponsor + ':');
                 }
 
