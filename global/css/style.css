@@ -238,19 +238,12 @@ footer .col-md-2 {
     background-color: #E1D9E4;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 0 15px;
+    padding: 0 10px;
     margin: 0 -10px;
     width: auto;
     color: #472e86;
     font-size: 16px;
     text-align: right;
-    line-height: 1.5;
-  }
-  .top-header .terms h2 {
-    margin: 0;
-    height: 24px;
-    font-size: 1em;
-    font-weight: 600;
     line-height: 1.5;
   }
   .col-left {
