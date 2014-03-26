@@ -37,8 +37,8 @@ $dbmap['Article']['belongs_to']['Food'] = array('foreign_key'=>'id');
 */
 
 
-//$dbconfig['dev'] = array('localhost', 'kazio', 'joomla', 'joomla', 'mysql', true, 'charset' => 'latin2');
-$dbconfig['dev'] = array('localhost', 'kazio_dane1', 'kazio_0413', 'reg741', 'mysql', true);
+$dbconfig['dev'] = array('localhost', 'kazio', 'joomla', 'joomla', 'mysql', true, 'charset' => 'latin2');
+//$dbconfig['dev'] = array('localhost', 'kazio_dane1', 'kazio_0413', 'reg741', 'mysql', true);
 $dbconfig['prod'] = array('localhost', 'kazio_dane1', 'kazio_0413', 'reg741', 'mysql', true);
 
 ?>

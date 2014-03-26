@@ -20,6 +20,7 @@ body {
     font-size: 14px;
     font-weight: 600;
     color: rgba(255,255,255,.7);
+    z-index: 2;
   }
   .navbar-toggle {
     float: none;
@@ -43,6 +44,9 @@ body {
   position: relative;
   #gradient>.horizontal(#ffffff; #472e86; 55%; 80%);
   height: 128px;
+  .col-md-2 {
+    z-index: 3;
+  }
   .logo {
     background: url("../img10/wkrainiechopina_small.png") no-repeat;
     width: 226px;
@@ -139,6 +143,17 @@ body {
   }
 }
 
+article {
+  padding: 5px;
+}
+
+footer {
+  line-height: 1.1;
+  .col-md-2 {
+    z-index: 2;
+  }
+}
+
 @media (min-width: 768px) {
 
 }
@@ -157,7 +172,6 @@ body {
       position: relative;
       background: #9e90bc;
       text-align: right;
-      z-index: 1;
     }
     .spons-h {
       position: absolute;
@@ -236,13 +250,20 @@ body {
       background-color: #E1D9E4;
       border-top: 1px solid rgba(0, 0, 0, 0.2);
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      padding: 0 10px;
+      padding: 0 15px;
       margin: 0 -10px;
       width: auto;
       color: @text-color;
       font-size: 16px;
       text-align: right;
       line-height: 1.5;
+      h2 {
+        margin: 0;
+        height: 24px;
+        font-size: 1em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
     }
   }
 
@@ -256,6 +277,7 @@ body {
     bottom: 0;
     left: 0;
     .box-shadow(4px 0 4px rgba(0, 0, 0, 0.2));
+    z-index: 1;
     .tree {
       position: absolute;
       background: url("../img10/drzewo.png") no-repeat 0 0;
@@ -310,6 +332,29 @@ body {
       padding: 1px 3px;
     }
   }
+
+  .breadcrumb {
+    border-radius: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px -10px;
+    font-weight: 600;
+    li:before {
+      font-weight: 300;
+    }
+  }
+  #mail {
+    margin: 50px 0 30px;
+    input {
+      background: rgba(255,255,255,.3);
+      margin-bottom: 10px;
+      .placeholder(rgba(255,255,255,.6));
+      &:focus {
+        background: rgba(255,255,255,.6);
+      }
+    }
+  }
+
 }
 
 @media (min-width: 1200px) {

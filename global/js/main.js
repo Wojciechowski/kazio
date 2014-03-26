@@ -22,6 +22,11 @@ function(jQuery){
     };
 
     $(document).ready(function() {
+        $('#mail a').click(function(){
+            $('#mail .more').addClass('hide');
+            $('#mail .text').removeClass('hide');
+            return false;
+        })
 //        $('.sponsors').Sponsors();
     });
 

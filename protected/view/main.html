@@ -95,28 +95,32 @@
             </nav>
 
             <form action="/index.php" method="post" id="mail">
-                <p>Jeśli chcesz otrzymywać aktualne informacje<span class="more hide">...<a href="#">>>></a></span>
-                    <span class="text">o&nbsp;koncertach i imprezach organizowanych przez nasze towarzystwo, podaj swój adres e-mail i&nbsp;naciśnij [Zapisz].<br>
+                    <p class="text-center">Jeśli chcesz otrzymywać aktualne informacje<span class="more">...<a href="#">>>></a></span>
+                    <span class="text hide">o&nbsp;koncertach i imprezach organizowanych przez nasze towarzystwo, podaj swój adres e-mail i&nbsp;naciśnij [Zapisz].<br>
                     Zaś jeśli będziesz chciał zrezygnować - wpisz adres <span class="nbsp">e-mail</span> i naciśnij [Wypisz]
                 </span></p>
-                <input type="text" name="email" id="email" value="" placeholder="wpisz swój e-mail"><br>
-                <button name="unsubscribe" value="">Wypisz</button>
-                <button name="subscribe" value="">Zapisz</button>
+                    <input type="text" name="email" id="email" value="" class="form-control" placeholder="wpisz swój e-mail">
+                    <button name="unsubscribe" class="btn btn-primary btn-sm pull-right">Wypisz</button>
+                    <button name="subscribe" class="btn btn-primary btn-sm">Zapisz</button>
             </form>
 
             <aside id="last-updated">
-                <p>Ostatnia aktualizacja:<br>{{update}}</p>
+                <p class="text-right"><strong>Ostatnia aktualizacja:<br>{{update}}</strong></p>
             </aside>
                 </div>
             </section>
         </div>
 
         <section class="col-md-7 col-md-offset-2 col-right">
-            <h2 class="page">Aktualności</h2>
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Aktualności</li>
+            </ol>
+
             <!-- if isset({{articles}}) -->
             <!-- loop articles -->
             <article id="article{{l' v.id}}"<!-- if {{l' v.class}} > '' --> class="{{l' v.class}}"<!-- endif -->>
-                <h1>{{l' v.title}}</h1>
+                <h1 class="text-center">{{l' v.title}}</h1>
                 <div>
                     {{l' v.content}}
                 </div>
@@ -128,19 +132,19 @@
     </div>
 
     <footer class="row">
-        <div class="span2">
-            <p>Towarzystwo Muzyczne<br>
+    <div class="col-md-2">
+        <p class="text-right"><strong>Towarzystwo Muzyczne<br>
                 im.&nbsp;Kazimierza Wiłkomirskiego<br>
                 05-080 Stare Babice<br>
                 ul. Polna 40<br>
                 <a href="http://www.wilkomirski.org.pl">www.wilkomirski.org.pl</a><br>
                 <a href="mailto:poczta@wilkomirski.org.pl">poczta@wilkomirski.org.pl</a>
                 <a href="mailto:ksiegowosc@wilkomirski.org.pl">ksiegowosc@wilkomirski.org.pl</a>
-                <a class="master" href="mailto:piotr.wojciechowski@kontakt.waw.pl">webmaster</a>
+            <a class="master" href="mailto:piotr.wojciechowski@kontakt.waw.pl">webmaster</a></strong>
             </p>
         </div>
-        <div class="span7">
-            <p><a href="#">do góry</a></p>
+    <div class="col-md-7">
+        <p class="text-right"><a href="#">do góry</a></p>
         </div>
     </footer>
 

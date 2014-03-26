@@ -1,4 +1,5 @@
 <?php
+ini_set('error_reporting', E_ALL);
 include './protected/config/common.conf.php';
 include './protected/config/routes.conf.php';
 include './protected/config/db.conf.php';
@@ -20,6 +21,6 @@ Doo::db()->sql_tracking = true; #for debugging/profiling purpose
 Doo::app()->route = $route;
 
 # Uncomment for DB profiling
-Doo::app()->run();
+//Doo::app()->run();
 
 ?>

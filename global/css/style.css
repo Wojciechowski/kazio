@@ -18,6 +18,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.7);
+  z-index: 2;
 }
 .top-banner .navbar-toggle {
   float: none;
@@ -40,6 +41,9 @@ body {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff472e86', GradientType=1);
   height: 128px;
+}
+.top-header .col-md-2 {
+  z-index: 3;
 }
 .top-header .logo {
   background: url("../img10/wkrainiechopina_small.png") no-repeat;
@@ -138,6 +142,15 @@ body {
 .languages .active a {
   opacity: 1;
 }
+article {
+  padding: 5px;
+}
+footer {
+  line-height: 1.1;
+}
+footer .col-md-2 {
+  z-index: 2;
+}
 @media (min-width: 992px) {
   .sponsors > div {
     position: relative;
@@ -150,7 +163,6 @@ body {
     position: relative;
     background: #9e90bc;
     text-align: right;
-    z-index: 1;
   }
   .sponsors .spons-h {
     position: absolute;
@@ -226,12 +238,19 @@ body {
     background-color: #E1D9E4;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 0 10px;
+    padding: 0 15px;
     margin: 0 -10px;
     width: auto;
     color: #472e86;
     font-size: 16px;
     text-align: right;
+    line-height: 1.5;
+  }
+  .top-header .terms h2 {
+    margin: 0;
+    height: 24px;
+    font-size: 1em;
+    font-weight: 600;
     line-height: 1.5;
   }
   .col-left {
@@ -248,6 +267,7 @@ body {
     left: 0;
     -webkit-box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
     box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
   }
   .col-left .tree {
     position: absolute;
@@ -299,5 +319,35 @@ body {
     color: #F8F9BB;
     display: block;
     padding: 1px 3px;
+  }
+  .breadcrumb {
+    border-radius: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px -10px;
+    font-weight: 600;
+  }
+  .breadcrumb li:before {
+    font-weight: 300;
+  }
+  #mail {
+    margin: 50px 0 30px;
+  }
+  #mail input {
+    background: rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+  }
+  #mail input::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 1;
+  }
+  #mail input:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  #mail input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  #mail input:focus {
+    background: rgba(255, 255, 255, 0.6);
   }
 }
