@@ -6,7 +6,7 @@
  * create: 04-03-2014
  */
 
-steal('js/jquery.min.js', function(jQuery){
+steal('jquery.min.js', function(jQuery){
     /**
      * Top banner Sponsors
      */
@@ -93,14 +93,14 @@ steal('js/jquery.min.js', function(jQuery){
                     } else {
                         $(this).attr('data-sponsor', sponsor);
                         if ($('.active', this).is('li')) {
-                            $('.spons-h').html(sponsor + ':');
+                            $('.spons-h').html(sponsor);
                         }
                     }
                 });
                 brand();
                 if (!$('.active', ul).is('li')) {
                     sponsor = $('ul:first-of-type li:first', that).addClass('active').parent().attr('data-sponsor');
-                    $('.spons-h').html(sponsor + ':');
+                    $('.spons-h').html(sponsor);
                 }
 
                 tim = setTimeout(rotor, 1000);
