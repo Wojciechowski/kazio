@@ -15,10 +15,11 @@ body {
 .top-banner {
   margin-bottom: 0;
   line-height: 1;
+  font-size: 14px;
+  font-weight: 600;
   .col-md-2 {
     background: @purple-light;
     font-size: 14px;
-    font-weight: 600;
     color: rgba(255,255,255,.7);
     z-index: 2;
   }
@@ -37,6 +38,9 @@ body {
   }
   p {
     margin: 3px 0;
+  }
+  small {
+    font-weight: 200;
   }
 }
 
@@ -145,6 +149,31 @@ body {
 
 article {
   padding: 5px;
+  h1 {
+    color: darken(@brand-danger, 25%);
+  }
+  &.poster {
+    position: relative;
+    background-color: #eeE0DF;
+    text-align: center;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+    }
+    &:before {
+      background: url("../img10/ramka_l.png") no-repeat left top, url("../img10/ramka_p.png") no-repeat right top;
+      height: 105px;
+      top: 0;
+    }
+    &:after {
+      background: url("../img10/ramka_l.png") no-repeat left bottom, url("../img10/ramka_p.png") no-repeat right bottom;
+      height: 110px;
+      bottom: 0;
+    }
+  }
 }
 
 footer {
@@ -227,9 +256,6 @@ footer {
 
   .top-header {
     background-image: none;
-    > .col-md-2 {
-      z-index: 1;
-    }
     @height: 133px;
     @width: 200px;
     .box_extra {
@@ -260,7 +286,7 @@ footer {
       h2 {
         margin: 0;
         height: 24px;
-        font-size: 1em;
+        font-size: 1.35em;
         font-weight: 600;
         line-height: 1.5;
       }
@@ -334,6 +360,11 @@ footer {
       color: #F8F9BB;
       display: block;
       padding: 1px 3px;
+      &:hover {
+        background-color: lighten(@brand-primary, 10%);
+        text-decoration: none;
+        text-shadow: 0 1px 3px #000;
+      }
     }
   }
 
@@ -359,6 +390,55 @@ footer {
     }
   }
 
+  /* sponsorzy - dół */
+  #sponsors {
+    position: fixed;
+    bottom: 0;
+    left: 100%;
+    z-index: 1;
+    .blok {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      div,
+      a {
+        position: absolute;
+        display: block;
+        border: 0;
+      }
+    }
+    img {
+      border: 4px solid #fff;
+      .box-shadow(3px 2px 8px rgba(0,0,0,0.5));
+    }
+    h2,
+    .h1 {
+      background: #FFF;
+      border-top-left-radius: 5px;
+      bottom: 0;
+      .box-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+      margin: 0;
+      padding: 0 15px 2px 5px;
+      position: absolute;
+      white-space: nowrap;
+      z-index: 2;
+    }
+  }
+
+  // Slideshow
+  #slideshow {
+    position: relative;
+    float: right;
+    background: @brand-primary;
+    width: 200px;
+    height: 133px;
+    padding-left: 1px;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 133px;
+    }
+  }
 }
 
 @media (min-width: 1200px) {

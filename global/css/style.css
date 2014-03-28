@@ -12,11 +12,12 @@ body {
 .top-banner {
   margin-bottom: 0;
   line-height: 1;
+  font-size: 14px;
+  font-weight: 600;
 }
 .top-banner .col-md-2 {
   background: #9e90bc;
   font-size: 14px;
-  font-weight: 600;
   color: rgba(255, 255, 255, 0.7);
   z-index: 2;
 }
@@ -33,6 +34,9 @@ body {
 }
 .top-banner p {
   margin: 3px 0;
+}
+.top-banner small {
+  font-weight: 200;
 }
 .top-header {
   position: relative;
@@ -145,6 +149,31 @@ body {
 article {
   padding: 5px;
 }
+article h1 {
+  color: #8b211e;
+}
+article.poster {
+  position: relative;
+  background-color: #eeE0DF;
+  text-align: center;
+}
+article.poster:before,
+article.poster:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+article.poster:before {
+  background: url("../img10/ramka_l.png") no-repeat left top, url("../img10/ramka_p.png") no-repeat right top;
+  height: 105px;
+  top: 0;
+}
+article.poster:after {
+  background: url("../img10/ramka_l.png") no-repeat left bottom, url("../img10/ramka_p.png") no-repeat right bottom;
+  height: 110px;
+  bottom: 0;
+}
 footer {
   line-height: 1.1;
 }
@@ -217,9 +246,6 @@ footer .col-md-2 {
   .top-header {
     background-image: none;
   }
-  .top-header > .col-md-2 {
-    z-index: 1;
-  }
   .top-header .box_extra {
     float: right;
     background-color: #31708f;
@@ -238,13 +264,23 @@ footer .col-md-2 {
     background-color: #E1D9E4;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 0 10px;
+    padding: 0 15px;
     margin: 0 -10px;
     width: auto;
     color: #472e86;
-    font-size: 16px;
     text-align: right;
     line-height: 1.5;
+  }
+  .top-header .terms h2 {
+    margin: 0;
+    height: 24px;
+    font-size: 1.35em;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .top-header h3,
+  .top-header h2 {
+    margin: 0;
   }
   .col-left {
     position: absolute;
@@ -292,7 +328,7 @@ footer .col-md-2 {
   .mainmenu > ul {
     min-height: 280px;
     padding: 0;
-    font-size: 13px;
+    font-size: 1.083em;
     font-weight: 800;
     text-align: right;
     line-height: 1.2;
@@ -312,6 +348,11 @@ footer .col-md-2 {
     color: #F8F9BB;
     display: block;
     padding: 1px 3px;
+  }
+  .mainmenu a:hover {
+    background-color: #5b3bac;
+    text-decoration: none;
+    text-shadow: 0 1px 3px #000;
   }
   .breadcrumb {
     border-radius: 0;
@@ -342,5 +383,54 @@ footer .col-md-2 {
   }
   #mail input:focus {
     background: rgba(255, 255, 255, 0.6);
+  }
+  /* sponsorzy - dół */
+  #sponsors {
+    position: fixed;
+    bottom: 0;
+    left: 100%;
+    z-index: 1;
+  }
+  #sponsors .blok {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  #sponsors .blok div,
+  #sponsors .blok a {
+    position: absolute;
+    display: block;
+    border: 0;
+  }
+  #sponsors img {
+    border: 4px solid #fff;
+    -webkit-box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  #sponsors h2,
+  #sponsors .h1 {
+    background: #FFF;
+    border-top-left-radius: 5px;
+    bottom: 0;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    padding: 0 15px 2px 5px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  #slideshow {
+    position: relative;
+    float: right;
+    background: #472e86;
+    width: 200px;
+    height: 133px;
+    padding-left: 1px;
+    overflow: hidden;
+  }
+  #slideshow img {
+    position: absolute;
+    top: 133px;
   }
 }

@@ -35,20 +35,9 @@
             </button>
         </div>
         <div class="col-md-7 sopns-collapse collapse sponsors-li">
-            <p>współorganizatorzy</p>
-            <ul class="b0">
-                <li><img src="images/imgfla/powiat_sochaczew.gif">
-                    GMINA KAMPINOS<br> Jakiś ważny gość...</li>
-                <li>GMINA KAMPINOS 1</li>
-                <li>GMINA KAMPINOS 2</li>
-            </ul>
-            <p>patronaci</p>
-            <ul class="b1">
-                <li><img src="images/imgfla/powiat_warszawski1.gif">
-                    GMINA KAMPINOS</li>
-                <li><img src="images/imgfla/gmina_brochow1.gif">GMINA KAMPINOS 1</li>
-                <li>GMINA KAMPINOS 2</li>
-            </ul>
+            <!-- if isset({{topbanner}}) -->
+            {{topbanner.content}}
+            <!-- endif -->
         </div><!--/.nav-collapse -->
     </aside>
 
@@ -59,7 +48,11 @@
             </div>
         </div>
         <div class="col-md-7 col-right">
-            <div class="box_extra"><!--<div id="slideshow"><img src="foto/slajdy/f438BabiceA__.jpg" alt=""><img src="foto/slajdy/IVF-2d__.jpg" alt=""><img src="foto/slajdy/4F-16b__.jpg" alt=""><img src="foto/slajdy/IVF-2c__.jpg" alt=""><img src="foto/slajdy/4F-18g__.jpg" alt=""><img src="foto/slajdy/f438BabiceB__.jpg" alt=""><img src="foto/slajdy/4F-18d__.jpg" alt=""><img src="foto/slajdy/IVF-3A-fot-Lukasz-Praski__.jpg" alt=""><img src="foto/slajdy/f419-BabiceC__.jpg" alt=""><img src="foto/slajdy/IVF-1D__.jpg" alt=""><img src="foto/slajdy/4F-15b__.jpg" alt=""><img src="foto/slajdy/4F-18-b__.jpg" alt=""><img src="foto/slajdy/IVF-2e__.jpg" alt=""><img src="foto/slajdy/4F-16c__.jpg" alt=""><img src="foto/slajdy/IVF-2g__.jpg" alt=""><img src="foto/slajdy/IVF-2h__.jpg" alt=""><img src="foto/slajdy/f419BabiceA__.jpg" alt=""><img src="foto/slajdy/f419BabiceB__.jpg" alt=""><img src="foto/slajdy/4F-10c__.jpg" alt=""><img src="foto/slajdy/IVF-2a__.jpg" alt=""><img src="foto/slajdy/IVF-2b__.jpg" alt=""></div>--></div>
+            <!-- if isset({{slideshow}}) -->
+            <div class="box_extra">
+                {{slideshow}}
+            </div>
+            <!-- endif -->
             <div class="logo"><a id="logo">W krainie Chopina - festiwal muzyczny</a></div>
             <div class="terms">
             <h2 class="edition">
@@ -158,7 +151,16 @@
   section = {{section}}
 </div>
 
-<script src='global/steal/steal.js?js/main.js'></script>
+<!-- if isset({{bottombanner}}) -->
+<div id="sponsors">
+    <div class="blok">
+        {{bottombanner.content}}
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- endif -->
+
+<script src='global/js/steal/steal.js?main.js'></script>
 <!--<script language="javascript">AC_FL_RunContent = 0;</script>
 <script src="global/js/AC_RunActiveContent.js"></script>
 <script src="global/js/jquery-1.10.2.min.js"></script>

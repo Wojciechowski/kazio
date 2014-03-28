@@ -7,8 +7,9 @@
  */
 
 steal(
-    'js/jquery.min.js',
-    'js/widgets/sponsors.js',
+    'jquery.min.js',
+    'widgets/sponsors.js',
+    'widgets/sponsor_b.js',
 function(jQuery){
     /**
      * Top banner xx
@@ -28,6 +29,27 @@ function(jQuery){
             return false;
         })
 //        $('.sponsors').Sponsors();
+
+        var im = $('#slideshow img');
+        l = im.length,
+            i = 0;
+        //im.css({'position':'absolute'});
+        im.eq(0).css({'top':0});
+        function rotor(){
+            var j = i + 1;
+            if (j == l) j = 0;
+            im.eq(j).css({'top':133});
+            im.eq(i).animate({
+                'top': -133
+            },500);
+            im.eq(j).animate({
+                'top': 0
+            },500);
+            i++;
+            if (i == l) i = 0;
+            xx=setTimeout(rotor,3000);
+        }
+        rotor();
     });
 
 })
