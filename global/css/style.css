@@ -24,6 +24,7 @@ body {
 .top-banner .navbar-toggle {
   float: none;
   margin-left: 10px;
+  vertical-align: middle;
 }
 .top-banner .navbar-toggle .icon-bar {
   background-color: #e1d9e4;
@@ -50,17 +51,19 @@ body {
   z-index: 3;
 }
 .top-header .logo {
-  background: url("../img10/wkrainiechopina_small.png") no-repeat;
-  width: 226px;
   height: 101px;
   margin: 5px 50% -10px auto;
-  text-indent: -10000px;
+}
+.top-header .logo img {
+  width: 140px;
 }
 .top-header .terms {
-  width: 200px;
   color: #6a49b9;
   font-weight: 600;
   line-height: 1.1;
+}
+.top-header .terms span {
+  flex-wrap: wrap;
 }
 .main-brand {
   position: absolute;
@@ -71,10 +74,10 @@ body {
 }
 .main-brand h1 {
   margin: 4px 10px;
-  width: 200px;
+  width: 155px;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: 800;
   line-height: 1;
   text-shadow: 2px 2px 6px #000000, 0 0 1px #000000;
@@ -82,13 +85,16 @@ body {
   text-transform: uppercase;
 }
 .main-brand h1 .big {
-  font-size: 31px;
+  font-size: 1.72em;
 }
 .main-brand h1 .x {
   display: inline-block;
   margin: 0 -3px -30px -10px;
-  font-size: 44px;
-  vertical-align: -18px;
+  font-size: 2.45em;
+  vertical-align: -0.37em;
+}
+.box_extra {
+  display: none;
 }
 .collapse-switch {
   position: relative;
@@ -148,9 +154,7 @@ body {
 }
 article {
   padding: 5px;
-}
-article h1 {
-  color: #8b211e;
+  border-bottom: 1px solid #472e86;
 }
 article.poster {
   position: relative;
@@ -173,6 +177,13 @@ article.poster:after {
   background: url("../img10/ramka_l.png") no-repeat left bottom, url("../img10/ramka_p.png") no-repeat right bottom;
   height: 110px;
   bottom: 0;
+}
+article h1 {
+  position: relative;
+  color: #8b211e;
+}
+article > div {
+  position: relative;
 }
 footer {
   line-height: 1.1;

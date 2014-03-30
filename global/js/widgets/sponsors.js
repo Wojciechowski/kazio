@@ -58,7 +58,7 @@ steal('jquery.min.js', function(jQuery){
                         span.animate({
                             'margin-top': height
                         }, param.timer, function(){
-                            span.css({'margin-top': height * -1}).html(parent.attr('data-sponsor') + ':').animate({
+                            span.css({'margin-top': height * -1}).html(parent.attr('data-sponsor')).animate({
                                 'margin-top': 0
                             }, param.timer, function(){
                                 move2(parent);
@@ -70,47 +70,51 @@ steal('jquery.min.js', function(jQuery){
             },
 
             init = function(){
-                ul = $('ul', that);
+                if ($(window).width() > 751) {
+                    ul = $('ul', that);
 
-                var sponsor,
-                    img = $('img', ul),
-                    i = 0,
+                    var sponsor,
+                        img = $('img', ul),
+                        i = 0,
 
-                    brand = function(){
-                        img.each(function(){
-                            if (img.index($(this)) == 0 && $(this).outerWidth() == 0) {
-                                setTimeout(brand, 50);
-                                return;
+                        brand = function(){
+                            img.each(function(){
+                                if (img.index($(this)) == 0 && $(this).outerWidth() == 0) {
+                                    setTimeout(brand, 50);
+                                    return;
+                                }
+                                $(this).parent().css('padding-left', ($(this).outerWidth() + param.padd) + 'px');
+                                $(this).wrap('<span class="brand"/>');
+                            })
+                        };
+
+                    $('.sponsors-li', that).children().each(function(){
+                        if (!$(this).is('ul')) {
+                            sponsor = $(this).text();
+                        } else {
+                            $(this).attr('data-sponsor', sponsor);
+                            if ($('.active', this).is('li')) {
+                                $('.spons-h').html(sponsor);
                             }
-                            $(this).parent().css('padding-left', ($(this).outerWidth() + param.padd) + 'px');
-                            $(this).wrap('<span class="brand"/>');
-                        })
-                    };
-
-                $('.sponsors-li', that).children().each(function(){
-                    if (!$(this).is('ul')) {
-                        sponsor = $(this).text();
-                    } else {
-                        $(this).attr('data-sponsor', sponsor);
-                        if ($('.active', this).is('li')) {
-                            $('.spons-h').html(sponsor);
                         }
+                    });
+                    brand();
+                    if (!$('.active', ul).is('li')) {
+                        sponsor = $('ul:first-of-type li:first', that).addClass('active').parent().attr('data-sponsor');
+                        $('.spons-h').html(sponsor);
                     }
-                });
-                brand();
-                if (!$('.active', ul).is('li')) {
-                    sponsor = $('ul:first-of-type li:first', that).addClass('active').parent().attr('data-sponsor');
-                    $('.spons-h').html(sponsor);
-                }
 
-                tim = setTimeout(rotor, 1000);
+                    tim = setTimeout(rotor, 1000);
+                } else {
+                    $('.spons-h', that).html($('p:first-of-type', that).text());
+                }
             };
 
 
 
         return this.each(function(){
-            that = $(this);
-            init();
+                that = $(this);
+                init();
         });
     };
 

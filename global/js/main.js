@@ -11,6 +11,9 @@ steal(
     'widgets/sponsors.js',
     'widgets/sponsor_b.js',
 function(jQuery){
+    steal(
+        'bootstrap/collapse.js'
+    )
     /**
      * Top banner xx
      */
