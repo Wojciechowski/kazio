@@ -131,8 +131,8 @@
                 05-080 Stare Babice<br>
                 ul. Polna 40<br>
                 <a href="http://www.wilkomirski.org.pl">www.wilkomirski.org.pl</a><br>
-                <a href="mailto:poczta@wilkomirski.org.pl">poczta@wilkomirski.org.pl</a>
-                <a href="mailto:ksiegowosc@wilkomirski.org.pl">ksiegowosc@wilkomirski.org.pl</a>
+                <a href="mailto:poczta@wilkomirski.org.pl">poczta@wilkomirski.org.pl</a><br>
+                <a href="mailto:ksiegowosc@wilkomirski.org.pl">ksiegowosc@wilkomirski.org.pl</a><br>
             <a class="master" href="mailto:piotr.wojciechowski@kontakt.waw.pl">webmaster</a></strong>
             </p>
         </div>
@@ -147,18 +147,18 @@
 </pre>
   <!-- endif -->
 
-  group = {{group}}<br>
-  section = {{section}}
+    <!-- if isset({{bottombanner}}) -->
+    <div id="sponsors">
+        <div class="blok">
+            {{bottombanner.content}}
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- endif -->
+  <!--group = {{group}}<br>
+  section = {{section}}-->
 </div>
 
-<!-- if isset({{bottombanner}}) -->
-<div id="sponsors">
-    <div class="blok">
-        {{bottombanner.content}}
-        <div class="clear"></div>
-    </div>
-</div>
-<!-- endif -->
 
 <script src='global/js/steal/steal.js?main.js'></script>
 <!--<script language="javascript">AC_FL_RunContent = 0;</script>

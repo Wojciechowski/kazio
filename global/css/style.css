@@ -11,6 +11,7 @@ body {
 }
 .top-banner {
   margin-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   line-height: 1;
   font-size: 14px;
   font-weight: 600;
@@ -34,7 +35,19 @@ body {
   background-color: #9780ce;
 }
 .top-banner p {
-  margin: 3px 0;
+  margin: 7px 0;
+}
+.top-banner ul {
+  list-style: none;
+}
+.top-banner li {
+  min-height: 42px;
+}
+.top-banner .foto_0 {
+  display: inline-block;
+  float: left;
+  margin: -2px 6px 0 -37px;
+  vertical-align: top;
 }
 .top-banner small {
   font-weight: 200;
@@ -45,14 +58,13 @@ body {
   background-image: linear-gradient(to right, #ffffff 55%, #472e86 80%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff472e86', GradientType=1);
-  height: 128px;
 }
 .top-header .col-md-2 {
   z-index: 3;
 }
 .top-header .logo {
   height: 101px;
-  margin: 5px 50% -10px auto;
+  margin: 5px 50% -48px auto;
 }
 .top-header .logo img {
   width: 140px;
@@ -62,12 +74,15 @@ body {
   font-weight: 600;
   line-height: 1.1;
 }
+.top-header .terms h2 {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
 .top-header .terms span {
-  flex-wrap: wrap;
+  display: block;
 }
 .main-brand {
   position: absolute;
-  background: url("../img10/drzewo_small.png") no-repeat right top;
   top: 0;
   right: 0;
   z-index: 1;
@@ -98,20 +113,23 @@ body {
 }
 .collapse-switch {
   position: relative;
-  background: #472e86;
-  padding-right: 65px;
+  background: #9780ce;
+  padding-right: 25px;
   margin: 0 -10px;
+  height: 40px;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 600;
   text-align: right;
+  line-height: 38px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .collapse-switch .navbar-toggle {
-  position: absolute;
+  position: static;
   background: #472e86;
+  border: 1px solid #fff;
   opacity: 0.5;
-  margin: 0;
+  margin: 7px;
   top: 22px;
   right: 65px;
   z-index: 1;
@@ -152,6 +170,63 @@ body {
 .languages .active a {
   opacity: 1;
 }
+/* Column left */
+.col-left {
+  background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
+  background-image: linear-gradient(to bottom, #472e86 44px, #9780ce 670px);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff472e86', endColorstr='#ff9780ce', GradientType=0);
+}
+.col-left .mainmenu {
+  padding-top: 30px;
+}
+.col-left .mainmenu ul {
+  list-style: none;
+  margin: 0;
+}
+.col-left .mainmenu > ul {
+  min-height: 280px;
+  padding: 0;
+  font-size: 1.083em;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+}
+.col-left .mainmenu > ul ul {
+  display: none;
+  margin-bottom: 15px;
+  padding: 10px 8px 0 0;
+}
+.col-left .mainmenu li {
+  margin-bottom: 5px;
+}
+.col-left .mainmenu a {
+  background: rgba(0, 0, 0, 0.4);
+  border-right: 2px solid #000000;
+  border-bottom: 1px solid #000000;
+  color: #F8F9BB;
+  display: block;
+  padding: 5px 3px;
+}
+.col-left .mainmenu a:hover {
+  background-color: #5b3bac;
+  text-decoration: none;
+  text-shadow: 0 1px 3px #000;
+}
+.nav-collapse {
+  width: 250px;
+  margin: 0 auto;
+}
+.nav-collapse button {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+/* breadcrumb */
+.breadcrumb {
+  margin-left: -10px;
+  margin-right: -10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
 article {
   padding: 5px;
   border-bottom: 1px solid #472e86;
@@ -191,7 +266,46 @@ footer {
 footer .col-md-2 {
   z-index: 2;
 }
-@media (min-width: 992px) {
+#sponsors {
+  padding-bottom: 20px;
+}
+#sponsors a {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+@media (min-width: 500px) {
+  .top-header .logo {
+    margin-bottom: -15px;
+    margin-right: 230px;
+    text-align: center;
+  }
+  .top-header .logo img {
+    width: auto;
+  }
+  .top-header .terms h2 {
+    font-size: 15px;
+    margin-bottom: 1px;
+  }
+  .top-header .terms span {
+    display: inline;
+  }
+  .main-brand {
+    background: url("../img10/drzewo_small.png") no-repeat right top;
+  }
+  .main-brand h1 {
+    width: 200px;
+    margin-top: 1px;
+    font-size: 1.5em;
+  }
+  /* banner top*/
+  .top-banner .navbar-header {
+    float: none;
+  }
+  .top-banner .foto_0 {
+    display: inline;
+    float: none;
+    margin: 0;
+  }
   .sponsors > div {
     position: relative;
     background: #e1d9e4;
@@ -202,7 +316,113 @@ footer .col-md-2 {
   .sponsors .sponsors-h {
     position: relative;
     background: #9e90bc;
+    height: 25px;
+  }
+  .sponsors .sponsors-h .navbar-toggle {
+    display: none;
+  }
+  .sponsors .spons-h {
+    position: absolute;
+    display: block;
+    margin-top: 0;
+    height: 25px;
+    line-height: 24px;
+  }
+  .sponsors .sponsors-h,
+  .sponsors .sponsors-li {
+    overflow: hidden;
+  }
+  .sponsors .sponsors-li {
+    display: block;
+  }
+  .sponsors .sponsors-li ul {
+    position: absolute;
+    display: table;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+  }
+  .sponsors .sponsors-li li {
+    position: relative;
+    display: none;
+    height: 44px;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  .sponsors .sponsors-li li.active {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .sponsors .sponsors-li .brand {
+    position: absolute;
+    display: block;
+    height: 44px;
+    width: auto;
+    min-width: 20px;
+    margin-top: -22px;
+    top: 50%;
+    left: 2px;
+    line-height: 41px;
+  }
+  .sponsors .sponsors-li .brand span,
+  .sponsors .sponsors-li .brand img {
+    vertical-align: middle;
+  }
+  .sponsors .sponsors-li p {
+    display: none;
+  }
+  /* sponsorzy - dół */
+  #sponsors {
+    position: fixed;
+    bottom: 0;
+    left: 100%;
+    z-index: 5;
+  }
+  #sponsors .blok {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  #sponsors .blok div,
+  #sponsors .blok a {
+    position: absolute;
+    display: block;
+    border: 0;
+  }
+  #sponsors img {
+    border: 4px solid #fff;
+    -webkit-box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  #sponsors h2,
+  #sponsors .h1 {
+    background: #FFF;
+    border-top-left-radius: 5px;
+    bottom: 0;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    padding: 0 15px 2px 5px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 2;
+  }
+}
+@media (min-width: 992px) {
+  /* banner top*/
+  .sponsors > div {
+    position: relative;
+    background: #e1d9e4;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 44px;
+    line-height: 42px;
+  }
+  .sponsors .sponsors-h {
+    position: relative;
+    background: #9e90bc;
+    height: 44px;
     text-align: right;
+    float: left;
   }
   .sponsors .spons-h {
     position: absolute;
@@ -210,6 +430,7 @@ footer .col-md-2 {
     margin-top: 0;
     height: 44px;
     right: 10px;
+    line-height: 44px;
   }
   .sponsors .sponsors-h,
   .sponsors .sponsors-li {
@@ -258,6 +479,7 @@ footer .col-md-2 {
     background-image: none;
   }
   .top-header .box_extra {
+    display: block;
     float: right;
     background-color: #31708f;
     height: 133px;
@@ -270,6 +492,7 @@ footer .col-md-2 {
     height: 133px;
     width: auto;
     margin: 0 200px 0 0;
+    text-indent: -30000px;
   }
   .top-header .terms {
     background-color: #E1D9E4;
@@ -320,6 +543,48 @@ footer .col-md-2 {
   .col-left > .col-md-9 {
     min-height: 480px;
   }
+  .col-left .mainmenu {
+    padding-top: 190px;
+  }
+  .col-left .mainmenu ul {
+    list-style: none;
+    margin: 0;
+  }
+  .col-left .mainmenu > ul {
+    min-height: 280px;
+    padding: 0;
+    font-size: 1.083em;
+    font-weight: 800;
+    text-align: right;
+    line-height: 1.2;
+  }
+  .col-left .mainmenu > ul ul {
+    display: none;
+    margin-bottom: 15px;
+    padding: 10px 8px 0 0;
+  }
+  .col-left .mainmenu li {
+    margin-bottom: 10px;
+  }
+  .col-left .mainmenu a {
+    background: rgba(0, 0, 0, 0.4);
+    border-right: 2px solid #000000;
+    border-bottom: 1px solid #000000;
+    color: #F8F9BB;
+    display: block;
+    padding: 1px 3px;
+  }
+  .col-left .mainmenu a:hover {
+    background-color: #5b3bac;
+    text-decoration: none;
+    text-shadow: 0 1px 3px #000;
+  }
+  .nav-collapse {
+    width: auto;
+  }
+  .nav-collapse button {
+    margin: 0;
+  }
   .main-brand {
     background-image: none;
   }
@@ -329,47 +594,13 @@ footer .col-md-2 {
   .nav-collapse {
     display: block;
   }
-  .mainmenu {
-    padding-top: 190px;
-  }
-  .mainmenu ul {
-    list-style: none;
-    margin: 0;
-  }
-  .mainmenu > ul {
-    min-height: 280px;
-    padding: 0;
-    font-size: 1.083em;
-    font-weight: 800;
-    text-align: right;
-    line-height: 1.2;
-  }
-  .mainmenu > ul ul {
-    display: none;
-    margin-bottom: 15px;
-    padding: 10px 8px 0 0;
-  }
-  .mainmenu li {
-    margin-bottom: 10px;
-  }
-  .mainmenu a {
-    background: rgba(0, 0, 0, 0.4);
-    border-right: 2px solid #000000;
-    border-bottom: 1px solid #000000;
-    color: #F8F9BB;
-    display: block;
-    padding: 1px 3px;
-  }
-  .mainmenu a:hover {
-    background-color: #5b3bac;
-    text-decoration: none;
-    text-shadow: 0 1px 3px #000;
-  }
   .breadcrumb {
     border-radius: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     margin: 10px -10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     font-weight: 600;
   }
   .breadcrumb li:before {
@@ -394,42 +625,6 @@ footer .col-md-2 {
   }
   #mail input:focus {
     background: rgba(255, 255, 255, 0.6);
-  }
-  /* sponsorzy - dół */
-  #sponsors {
-    position: fixed;
-    bottom: 0;
-    left: 100%;
-    z-index: 1;
-  }
-  #sponsors .blok {
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-  #sponsors .blok div,
-  #sponsors .blok a {
-    position: absolute;
-    display: block;
-    border: 0;
-  }
-  #sponsors img {
-    border: 4px solid #fff;
-    -webkit-box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
-    box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
-  }
-  #sponsors h2,
-  #sponsors .h1 {
-    background: #FFF;
-    border-top-left-radius: 5px;
-    bottom: 0;
-    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    margin: 0;
-    padding: 0 15px 2px 5px;
-    position: absolute;
-    white-space: nowrap;
-    z-index: 2;
   }
   #slideshow {
     position: relative;

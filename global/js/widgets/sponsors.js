@@ -70,7 +70,7 @@ steal('jquery.min.js', function(jQuery){
             },
 
             init = function(){
-                if ($(window).width() > 751) {
+                if ($(window).width() > 500) {
                     ul = $('ul', that);
 
                     var sponsor,
