@@ -273,20 +273,20 @@ footer .col-md-2 {
   display: inline-block;
   margin-bottom: 10px;
 }
-@media (min-width: 500px) {
-  .top-header .logo {
+@media (min-width: 516px) {
+  .col- .top-header .logo {
     margin-bottom: -15px;
     margin-right: 230px;
     text-align: center;
   }
-  .top-header .logo img {
+  .col- .top-header .logo img {
     width: auto;
   }
-  .top-header .terms h2 {
+  .col- .top-header .terms h2 {
     font-size: 15px;
     margin-bottom: 1px;
   }
-  .top-header .terms span {
+  .col- .top-header .terms span {
     display: inline;
   }
   .main-brand {

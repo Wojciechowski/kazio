@@ -12,7 +12,7 @@ steal(
     'jquery.min.js',
 function(jQuery){
     $(document).ready(function(){
-        if ($(window).width() > 500 && $('#sponsors').is('div')) {
+        if ($(window).width() > 580 && $('#sponsors').is('div')) {
             var i = -1,
                 time = 500,
                 block = $('#sponsors .blok'),

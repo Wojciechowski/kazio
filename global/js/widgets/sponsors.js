@@ -70,7 +70,6 @@ steal('jquery.min.js', function(jQuery){
             },
 
             init = function(){
-                if ($(window).width() > 500) {
                     ul = $('ul', that);
 
                     var sponsor,
@@ -104,13 +103,9 @@ steal('jquery.min.js', function(jQuery){
                         $('.spons-h').html(sponsor);
                     }
 
-                    tim = setTimeout(rotor, 1000);
-                } else {
-                    $('.spons-h', that).html($('p:first-of-type', that).text());
-                }
+                tim = setTimeout(rotor, 1000);
+
             };
-
-
 
         return this.each(function(){
                 that = $(this);
