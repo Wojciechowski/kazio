@@ -44,6 +44,7 @@ body {
   ul {
 //    padding-left: 10px;
     list-style: none;
+    margin-top: 0 !important;
   }
   li {
     min-height: 42px;
@@ -51,7 +52,8 @@ body {
   .foto_0 {
     display: inline-block;
     float: left;
-    margin: -2px 6px 0 -37px;
+    margin: -6px 6px 0 -37px;
+    padding-left: 0 !important;
     vertical-align: top;
   }
   small {
@@ -283,8 +285,7 @@ footer {
   }
 }
 
-@media (min-width: 516px) {
-  .col-
+@media (min-width: 580px) {
   .top-header {
     .logo {
       margin-bottom: -15px;
@@ -330,7 +331,7 @@ footer {
     > div {
       position: relative;
       background: #e1d9e4;
-      border-bottom: 1px solid rgba(0,0,0,.2);
+//      border-bottom: 1px solid rgba(0,0,0,.2);
       height: @height;
       line-height: @height - 2;
     }

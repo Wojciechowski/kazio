@@ -39,6 +39,7 @@ body {
 }
 .top-banner ul {
   list-style: none;
+  margin-top: 0 !important;
 }
 .top-banner li {
   min-height: 42px;
@@ -46,7 +47,8 @@ body {
 .top-banner .foto_0 {
   display: inline-block;
   float: left;
-  margin: -2px 6px 0 -37px;
+  margin: -6px 6px 0 -37px;
+  padding-left: 0 !important;
   vertical-align: top;
 }
 .top-banner small {
@@ -273,20 +275,20 @@ footer .col-md-2 {
   display: inline-block;
   margin-bottom: 10px;
 }
-@media (min-width: 516px) {
-  .col- .top-header .logo {
+@media (min-width: 580px) {
+  .top-header .logo {
     margin-bottom: -15px;
     margin-right: 230px;
     text-align: center;
   }
-  .col- .top-header .logo img {
+  .top-header .logo img {
     width: auto;
   }
-  .col- .top-header .terms h2 {
+  .top-header .terms h2 {
     font-size: 15px;
     margin-bottom: 1px;
   }
-  .col- .top-header .terms span {
+  .top-header .terms span {
     display: inline;
   }
   .main-brand {
@@ -309,7 +311,6 @@ footer .col-md-2 {
   .sponsors > div {
     position: relative;
     background: #e1d9e4;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     height: 44px;
     line-height: 42px;
   }
