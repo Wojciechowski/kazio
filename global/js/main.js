@@ -23,30 +23,50 @@ $(document).ready(function() {
         $('#mail .text').removeClass('hide');
         return false;
     })
-    $('.col-right').append('<div id="log"/>');
-    $(window).resize(function(){
-        $('#log').html($(this).width());
-    })
-//        $('.sponsors').Sponsors();
 
-    /*var im = $('#slideshow img');
-    l = im.length,
-        i = 0;
-    //im.css({'position':'absolute'});
+    var box = $('#slideshow'),
+        im = box.children('img'),
+        l = im.length,
+        pause = 3000,
+        i = 0,
+        action = 0,
+        etc,
+
+        start = function(){
+            var pos = box.parent().css('display');
+
+            if (pos == 'block') {
+                if (action == 0) {
+                    // start
+                    etc = setTimeout(rotor, pause);
+                    action++;
+                }
+            } else {
+                // stop
+                clearTimeout(etc);
+                action = 0;
+            }
+        },
+
+        rotor = function(){
+            var j = i + 1;
+            if (j == l) j = 0;
+            im.eq(j).css({'top':133});
+            im.eq(i).animate({
+                'top': -133
+            },500);
+            im.eq(j).animate({
+                'top': 0
+            },500);
+            i++;
+            if (i == l) i = 0;
+            etc=setTimeout(rotor, pause);
+        };
+
     im.eq(0).css({'top':0});
-    function rotor(){
-        var j = i + 1;
-        if (j == l) j = 0;
-        im.eq(j).css({'top':133});
-        im.eq(i).animate({
-            'top': -133
-        },500);
-        im.eq(j).animate({
-            'top': 0
-        },500);
-        i++;
-        if (i == l) i = 0;
-        xx=setTimeout(rotor,3000);
-    }
-    rotor();*/
+    start();
+
+    $(window).resize(function(){
+        start();
+    })
 });
