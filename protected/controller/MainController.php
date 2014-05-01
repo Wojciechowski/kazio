@@ -28,7 +28,7 @@ class MainController extends DooController{
         }
 
         // sponsorzy
-        $banner2 = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = 181 AND jest = 1', 'limit' => 1));
+        $banner2 = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = 181 AND jest = 1', 'desc' => 'id', 'limit' => 1));
         if ($banner2) {
             $this->data['bottombanner'] = $this->parseContent($banner2);
         }

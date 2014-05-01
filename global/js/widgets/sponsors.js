@@ -1,9 +1,9 @@
 /**
  * Package for wilkomirski.org.pl
  *
- * version: 0.1
+ * version: 1.0
  * author: Piotr Wojciechowski :: piotr.wojciechowski@kontakt.waw.pl
- * create: 04-03-2014
+ * create: 27-04-2014
  */
 
 /**
@@ -17,116 +17,118 @@ $.fn.Sponsors = function(param) {
         w_start: 45
     }
 
-    var that, ul, tim, height,
+    var that, header_box, headers, list_box, go, tim,
         action = 0,
 
-        move2 = function(o){
-            o.css({'margin-top': height * -1});
-            if ($('.active', o).css('padding-left') == param.padd + 'px') {
-                $('.active', o).css('padding-left', $('.active img', o).width() + param.padd);
+        /**
+         * uruchamianie/zatrzymywanie animacji
+         */
+        start = function(){
+            var height = list_box.innerHeight();
+
+            if (height > 0 && height < param.w_start) {
+                console.log('start ', height);
+                if (action == 0) {
+                    tim = setTimeout(rotor, param.pause);
+                    action++;
+                }
+            } else {
+                clearTimeout(tim);
+                action = 0;
+                console.log('stop ', height, param.w_start+'px');
             }
-            o.animate({
-                'margin-top': 0
-            }, param.timer, function(){
-                tim = setTimeout(rotor, param.pause);
-            });
         },
 
+        /**
+         * rotowanie napisów
+         */
         rotor = function(){
-            var ul = $('ul', that),
-                activ = $('.active', ul),
-                next = activ.next(),
-                parent = activ.parent();
+            $('.end', list_box).removeClass('start end');
 
-            height = ul.height();
-            parent.animate({
-                'margin-top': height
-            }, param.timer, function(){
-                activ.removeClass('active');
-                if (next.is('li')) {
-                    next.addClass('active');
-                    move2(parent);
-                } else {
-                    var span = $('.spons-h');
+            var activ = $('.start', list_box),
+                next = activ.next();
 
-                    parent = ul.eq(ul.index(parent) + 1);
-                    if (!parent.is('ul')) {
-                        parent = ul.eq(0);
-                    }
-                    next = $('li:first-child', parent);
-                    parent.css({'margin-top': height * -1});
-                    next.addClass('active');
-                    span.animate({
-                        'margin-top': height
-                    }, param.timer, function(){
-                        span.css({'margin-top': height * -1}).html(parent.attr('data-sponsor')).animate({
-                            'margin-top': 0
-                        }, param.timer, function(){
-                            move2(parent);
-                        });
-                    });
+            activ.addClass('end');
+            if (next.is('li')) {
+                // kolejna pozycja w grupie
+                next.addClass('start');
+            } else {
+                // zmiana grupy
+                var header_e = headers.filter('.end').removeClass('start'),
+                    header_s = headers.filter('.start'),
+                    header_n = header_s.next(),
+                    nr = header_s.attr('data-id') * 1 + 1,
+                    px = 0,
+                    pos;
 
+                header_s.addClass('end');
+                if (!header_n.is('span')) {
+                    // i od początku
+                    nr = 0;
+                    header_n = header_s.siblings('span[data-id="'+nr+'"]');
                 }
-            });
+                var ul = $('ul[data-id="'+nr+'"]', list_box);
+
+                header_n.addClass('start');
+                ul.children(':first').addClass('start');
+                header_e.removeClass('end');
+            }
+            tim = setTimeout(rotor, param.pause);
         },
 
+        /**
+         * Inicjowanie banera
+         */
         init = function(){
-            ul = $('ul', that);
+            var div = that.children();
+            header_box = div.filter('.sponsors-h'); // leawa kolumna (tytuły)
+            list_box = div.filter('.sponsors-li'); // prawa kolumna (treść)
 
-            var sponsor,
-                img = $('img', ul),
-                i = 0,
+            var data = list_box.children(), // wsystkie p i ul
+                header = header_box.children('.spons-h'),
+                i = -1,
+                header_n = $('');
 
-                brand = function(){
-                    img.each(function(){
-                        if (img.index($(this)) == 0 && $(this).outerWidth() == 0) {
-                            setTimeout(brand, 50);
-                            return;
-                        }
-                        $(this).parent().css('padding-left', ($(this).outerWidth() + param.padd) + 'px');
-                        $(this).wrap('<span class="brand"/>');
-                    })
-                };
+            data.each(function(){
+                var o = $(this);
 
-            $('.sponsors-li', that).children().each(function(){
-                if (!$(this).is('ul')) {
-                    sponsor = $(this).text();
-                } else {
-                    $(this).attr('data-sponsor', sponsor);
-                    if ($('.active', this).is('li')) {
-                        $('.spons-h').html(sponsor);
+                if (o.is('p')) {
+                    // dodanie nowego pojemnika
+                    if (header_n.is('span')) {
+                        header.after(header_n);
+                        header = header_n;
+                    }
+
+                    // inicjowanie tytułu
+                    i++;
+                    header.html(o.text()).attr('data-id', i);
+                    header_n = header.clone();
+
+                    // jeśli pierwszy
+                    if (!go) {
+                        header.addClass('start');
+                    }
+                } else { // ul
+                    o.children().each(function(){
+                        var img = $('.foto_0', this).detach(),
+                            html = $(this).html();
+
+                        $(this).html($('<span/>').html(html)).prepend(img);
+                    });
+                    if (!go) {
+                        o.children().first().addClass('start');
+                        go = 1;
                     }
                 }
+                o.attr('data-id', i);
             });
-            brand();
-            if (!$('.active', ul).is('li')) {
-                sponsor = $('ul:first-of-type li:first', that).addClass('active').parent().attr('data-sponsor');
-                $('.spons-h').html(sponsor);
-            }
+            headers = header_box.children('.spons-h');
 
             start();
 
             $(window).resize(function(){
                 start();
             });
-        },
-
-        start = function(){
-            var height = $('.sponsors-li', that).innerHeight();
-
-            console.log('t ', (height > 0 && height < param.w_start));
-            if (height > 0 && height < param.w_start) {
-                if (action == 0) {
-                    console.log('start');
-                    tim = setTimeout(rotor, 1000);
-                    action++;
-                }
-            } else {
-                console.log('stop');
-                $('ul', that).stop(true, true);
-                tim = undefined;
-                action = 0;
-            }
         };
 
 

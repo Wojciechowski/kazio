@@ -11,7 +11,6 @@ body {
 }
 .top-banner {
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   line-height: 1;
   font-size: 14px;
   font-weight: 600;
@@ -38,18 +37,9 @@ body {
   margin: 7px 0;
 }
 .top-banner ul {
+  padding-left: 0;
   list-style: none;
   margin-top: 0 !important;
-}
-.top-banner li {
-  min-height: 42px;
-}
-.top-banner .foto_0 {
-  display: inline-block;
-  float: left;
-  margin: -6px 6px 0 -37px;
-  padding-left: 0 !important;
-  vertical-align: top;
 }
 .top-banner small {
   font-weight: 200;
@@ -172,6 +162,27 @@ body {
 .languages .active a {
   opacity: 1;
 }
+.sponsors .sponsors-h {
+  position: relative;
+}
+.sponsors .spons-h {
+  position: absolute;
+  top: -35px;
+}
+.sponsors .spons-h.start {
+  position: static;
+}
+.sponsors .spons-h.start.end {
+  position: absolute;
+}
+.sponsors .sponsors-li li span {
+  display: table-cell;
+  min-height: 44px;
+  vertical-align: middle;
+}
+.sponsors .sponsors-li li span.foto_0 {
+  padding-right: 8px;
+}
 /* Column left */
 .col-left {
   background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
@@ -268,12 +279,28 @@ footer {
 footer .col-md-2 {
   z-index: 2;
 }
-#sponsors {
-  padding-bottom: 20px;
+#pMedia p {
+  margin-top: 10px;
+  font-weight: 900;
 }
-#sponsors a {
+#pMedia ul {
+  padding: 0;
+  list-style: none;
+}
+#pMedia li {
+  padding-bottom: 10px;
+}
+#pMedia a {
   display: inline-block;
-  margin-bottom: 10px;
+}
+#pMedia img {
+  border: 4px solid #fff;
+  -webkit-box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
+}
+#pMedia img:hover {
+  -webkit-box-shadow: 3px 2px 8px rgba(0, 50, 200, 0.65);
+  box-shadow: 3px 2px 8px rgba(0, 50, 200, 0.65);
 }
 @media (min-width: 580px) {
   .top-header .logo {
@@ -323,11 +350,20 @@ footer .col-md-2 {
     display: none;
   }
   .sponsors .spons-h {
-    position: absolute;
+    position: absolute !important;
     display: block;
-    margin-top: 0;
+    top: -35px;
     height: 25px;
-    line-height: 24px;
+    line-height: 25px;
+  }
+  .sponsors .spons-h.start {
+    position: absolute;
+    top: 0;
+    -webkit-transition: top 1s;
+    transition: top 1s;
+  }
+  .sponsors .spons-h.start.end {
+    top: 35px;
   }
   .sponsors .sponsors-h,
   .sponsors .sponsors-li {
@@ -335,68 +371,68 @@ footer .col-md-2 {
   }
   .sponsors .sponsors-li {
     display: block;
+    height: 44px !important;
+    position: relative;
   }
   .sponsors .sponsors-li ul {
     position: absolute;
-    display: table;
+    display: block;
     height: 44px;
     margin: 0;
     padding: 0;
+    width: 100%;
   }
   .sponsors .sponsors-li li {
-    position: relative;
-    display: none;
-    height: 44px;
-    vertical-align: middle;
-    line-height: 1;
-  }
-  .sponsors .sponsors-li li.active {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .sponsors .sponsors-li .brand {
     position: absolute;
     display: block;
     height: 44px;
-    width: auto;
-    min-width: 20px;
-    margin-top: -22px;
-    top: 50%;
-    left: 2px;
-    line-height: 41px;
+    line-height: 1;
+    top: -45px;
   }
-  .sponsors .sponsors-li .brand span,
-  .sponsors .sponsors-li .brand img {
+  .sponsors .sponsors-li li.start {
+    display: table;
+    top: 0;
+    -webkit-transition: top 1s;
+    transition: top 1s;
+  }
+  .sponsors .sponsors-li li.start.end {
+    top: 45px;
+  }
+  .sponsors .sponsors-li li span {
+    display: table-cell;
+    height: 44px;
     vertical-align: middle;
   }
   .sponsors .sponsors-li p {
     display: none;
   }
   /* sponsorzy - dół */
-  #sponsors {
+  #pMedia {
     position: fixed;
     bottom: 0;
-    left: 100%;
+    right: 0;
     z-index: 5;
   }
-  #sponsors .blok {
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-  #sponsors .blok div,
-  #sponsors .blok a {
+  #pMedia li {
     position: absolute;
-    display: block;
+    display: inline-block;
     border: 0;
+    bottom: 0;
+    padding: 0 20px 30px;
+    right: 0;
   }
-  #sponsors img {
-    border: 4px solid #fff;
-    -webkit-box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
-    box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
+  #pMedia li.start {
+    margin-right: 0 !important;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    z-index: 7;
   }
-  #sponsors h2,
-  #sponsors .h1 {
+  #pMedia li.end {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 6;
+  }
+  #pMedia p {
     background: #FFF;
     border-top-left-radius: 5px;
     bottom: 0;
@@ -405,8 +441,14 @@ footer .col-md-2 {
     margin: 0;
     padding: 0 15px 2px 5px;
     position: absolute;
+    right: auto;
+    -webkit-transition: right 1s;
+    transition: right 1s;
     white-space: nowrap;
     z-index: 2;
+  }
+  #pMedia p.active {
+    right: 0;
   }
 }
 @media (min-width: 992px) {
@@ -426,9 +468,6 @@ footer .col-md-2 {
     float: left;
   }
   .sponsors .spons-h {
-    position: absolute;
-    display: block;
-    margin-top: 0;
     height: 44px;
     right: 10px;
     line-height: 44px;
@@ -436,45 +475,6 @@ footer .col-md-2 {
   .sponsors .sponsors-h,
   .sponsors .sponsors-li {
     overflow: hidden;
-  }
-  .sponsors .sponsors-li {
-    display: block;
-  }
-  .sponsors .sponsors-li ul {
-    position: absolute;
-    display: table;
-    height: 44px;
-    margin: 0;
-    padding: 0;
-  }
-  .sponsors .sponsors-li li {
-    position: relative;
-    display: none;
-    height: 44px;
-    vertical-align: middle;
-    line-height: 1;
-  }
-  .sponsors .sponsors-li li.active {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .sponsors .sponsors-li .brand {
-    position: absolute;
-    display: block;
-    height: 44px;
-    width: auto;
-    min-width: 20px;
-    margin-top: -22px;
-    top: 50%;
-    left: 2px;
-    line-height: 41px;
-  }
-  .sponsors .sponsors-li .brand span,
-  .sponsors .sponsors-li .brand img {
-    vertical-align: middle;
-  }
-  .sponsors .sponsors-li p {
-    display: none;
   }
   .top-header {
     background-image: none;
