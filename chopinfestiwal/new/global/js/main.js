@@ -6,6 +6,60 @@
  * create: 04-03-2014
  */
 
+$.fn.carousel = function(){
+    var that,
+        tm,
+        option = {
+            start: 100,
+            swap: 1000,
+            move: 6000
+        },
+
+        init = function(){
+            var list = that.children(),
+                len = list.length,
+                i = -1,
+
+                swap = function(){
+                    var n = i + 1;
+
+                    if (n == len) {
+                        n = 0;
+                    }
+                    list.eq(i).animate({
+                        opacity: 0
+                    }, option.swap);
+                    list.eq(n).animate({
+                        opacity: 1
+                    }, option.swap, function(){
+                        list.eq(i).children('img').css({'width': '88%', 'height': '88%'})
+                        i = n;
+                        tm = setTimeout(move, option.swap);
+                    });
+                },
+
+                move = function(){
+                    list.eq(i).children('img').animate({
+                        width: '100%',
+                        height: '100%'
+                    }, option.move, function(){
+                        tm = setTimeout(swap, option.swap);
+                    })
+
+                };
+
+            $('img', list).css({'width': '88%', 'height': '88%'})
+            list.css({'right': '-85px'});
+            list.css('opacity', 0);
+            tm = setTimeout(swap, 10);
+        };
+
+    return this.each(function(){
+        that = $(this);
+        init();
+    });
+}
+
 $(document).ready(function() {
     /**
      * Kontrola wysokości strony
@@ -85,4 +139,5 @@ $(document).ready(function() {
     $(window).resize(function(){
         start();
     })
+    $('#banner').carousel();
 });

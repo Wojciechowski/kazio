@@ -53,10 +53,35 @@
                 {{slideshow}}
             </div>
             <!-- endif -->
+            <!-- if isset({{mainbanner}}) -->
+            <div id="banner">
+                {{mainbanner.content}}
+            </div>
+            <!-- endif -->
             <div class="logo"><a id="logo"><img src="global/img10/wkrainiechopina_small.png" title="W krainie Chopina - festiwal muzyczny"></a></div>
             <div class="terms">
             <h2 class="edition">
+                <!-- if {{group}} == 69 && {{section}} == 8 -->
+                I letnia edycja <span>28 sierpia - 22 września 2005</span>
+                <!-- elseif {{group}} == 28 || ({{group}} == 69 && {{section}} == 28) -->
+                II letnia edycja <span>24 czerwca - 22 września 2006</span>
+                <!-- elseif {{group}} == 80 || ({{group}} == 69 && {{section}} == 80) -->
+                III letnia edycja <span>23 czerwca - 20 września 2007</span>
+                <!-- elseif {{group}} == 138 || ({{group}} == 69 && {{section}} == 138) -->
+                IV letnia edycja <span>21 czerwca - 21 września 2008</span>
+                <!-- elseif {{group}} == 157 || ({{group}} == 69 && {{section}} == 157) -->
+                V letnia edycja <span>20 czerwca - 20 września 2009</span>
+                <!-- elseif {{group}} == 167 || ({{group}} == 69 && {{section}} == 167) -->
+                VI letnia edycja <span>22 lutego 2010 - 22 lutego 2011</span>
+                <!-- elseif {{group}} == 173 || ({{group}} == 69 && {{section}} == 173) -->
+                VII letnia edycja <span>25 czerwca - 25 września 2011</span>
+                <!-- elseif {{group}} == 193 || ({{group}} == 69 && {{section}} == 193) -->
+                VIII letnia edycja <span>23 czerwca - 23 września 2012</span>
+                <!-- elseif {{group}} == 157 || ({{group}} == 69 && {{section}} == 157) -->
+                IX letnia edycja <span>31 maja - 29 września 2013</span>
+                <!-- else -->
                 X letnia edycja <span>31 maja - 29 września 2014</span>
+                <!-- endif -->
             </h2>
             </div>
         </div>
@@ -106,8 +131,14 @@
 
         <section class="col-md-7 col-md-offset-2 col-right">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Aktualności</li>
+                <li><a href="{{app_url}}">Home</a></li>
+                <!-- if isset({{subTitle}}) -->
+                <li><a href="{{subUrl}}">{{subTitle}}</a></li>
+                <!-- endif -->
+                <!-- if isset({{subTitle2}}) -->
+                <li><a href="{{subUrl2}}">{{subTitle2}}</a></li>
+                <!-- endif -->
+                <li class="active">{{sectionTitle}}</li>
             </ol>
 
             <!-- if isset({{articles}}) -->

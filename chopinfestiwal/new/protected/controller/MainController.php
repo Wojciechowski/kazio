@@ -16,6 +16,10 @@ class MainController extends DooController{
     }
 
     public function index(){
+        $wspolorganizatorzy = 198;// 198 202
+        $glownybaner = 199;// 199 203
+        $media = 200;// 200 204
+
         $this->data['group'] = (isset($_GET['grp'])) ? $_GET['grp']: 1;
         $this->data['section'] = (isset($_GET['dzial'])) ? $_GET['dzial']: 51;
 
@@ -24,19 +28,25 @@ class MainController extends DooController{
             $this->menu();
 
         // współorganizatorzy
-        $banner = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = 199 AND jest = 1', 'limit' => 1));
+        $banner = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$wspolorganizatorzy.' AND jest = 1', 'limit' => 1));
         if ($banner) {
             $this->data['topbanner'] = $this->parseContent($banner);
         }
 
-        // media
-        $banner2 = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = 181 AND jest = 1', 'desc' => 'id', 'limit' => 1));
+        // główny baner
+        $banner2 = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$glownybaner.' AND jest = 1', 'desc' => 'id', 'limit' => 1));
         if ($banner2) {
-            $this->data['bottombanner'] = $this->parseContent($banner2);
+            $this->data['mainbanner'] = $this->parseContent($banner2);
+        }
+
+        // media
+        $banner3 = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$media.' AND jest = 1', 'desc' => 'id', 'limit' => 1));
+        if ($banner3) {
+            $this->data['bottombanner'] = $this->parseContent($banner3);
         }
 //        $this->data['print'] = print_r($banner2);
 
-        // Slideshow
+        /*// Slideshow
         $dir = '../foto/slajdy/';
         $dh = opendir($dir);
         $files = '';
@@ -45,7 +55,7 @@ class MainController extends DooController{
                 $files .= '<img src="'.$dir.$file.'" alt="">';
             }
         }
-        $this->data['slideshow'] = '<div id="slideshow">'.$files.'</div>';
+        $this->data['slideshow'] = '<div id="slideshow">'.$files.'</div>';*/
 
         // treść
         if ($this->data['section'] == 51) {
@@ -207,15 +217,37 @@ class MainController extends DooController{
         foreach ($menu as $row) {
             if ($row->id_m == $this->data['section']) {
                 $this->data['sectionTitle'] = $row->DaneMenu8[0]->nazwa;
-                $this->data['print'] .= '<br>'.$row->id_m.' = '.$this->data['sectionTitle'];
+                $this->data['print'] .= '<br>a: '.$row->id_m.' = '.$this->data['sectionTitle'];
+            }
+            if ($row->id_m == $this->data['group']) {
+                $this->data['subTitle'] = $row->DaneMenu8[0]->nazwa;
+                $this->data['subUrl'] = '?grp=1&dzial=' . $row->id_m;
+                $this->data['print'] .= '<br>c: '.$row->id_m.' = '.$this->data['subTitle'];
             }
             if ($row->podmenu) {
                 $row->submenu = $DaneMenuF->relate('DaneMenu8', array('where'=>'menu = ' . $row->id_m . ' AND dane_menu_f.jest = 1', 'asc'=>'dane_menu_f.lp'));
                 if (count($row->submenu)) {
                     foreach ($row->submenu as $subrow) {
                         $subrow->submenu = $DaneMenuF->relate('DaneMenu8', array('where'=>'menu = ' . $subrow->id_m . ' AND dane_menu_f.jest = 1', 'asc'=>'dane_menu_f.lp'));
+                        if ($subrow->id_m == $this->data['section']) {
+                            $this->data['sectionTitle'] = $subrow->DaneMenu8[0]->nazwa;
+                            $this->data['print'] .= '<br>a: '.$subrow->id_m.' = '.$this->data['sectionTitle'];
+                        }
+                        if ($subrow->id_m == $this->data['group']) {
+                            $this->data['subTitle'] = $row->DaneMenu8[0]->nazwa;
+                            $this->data['subUrl'] = '?grp=1&dzial=' . $row->id_m;
+                            $this->data['subTitle2'] = $subrow->DaneMenu8[0]->nazwa;
+                            $this->data['subUrl2'] = '?grp=1&dzial=' . $subrow->id_m;
+                            foreach ($subrow->submenu as $subrow2) {
+                                if ($subrow2->id_m == $this->data['section']) {
+                                    $this->data['sectionTitle'] = $subrow2->DaneMenu8[0]->nazwa;
+                                    $this->data['print'] .= '<br>a: '.$subrow2->id_m.' = '.$this->data['sectionTitle'];
+                                    break;
+                                }
+                            }
+                        }
                     }
-                    $this->data['print'] .= '<br>'.count($row->submenu);
+                    $this->data['print'] .= '<br>b: '.count($row->submenu);
 
                 }
             }

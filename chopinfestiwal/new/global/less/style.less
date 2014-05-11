@@ -278,6 +278,14 @@ article {
       bottom: 0;
     }
   }
+  &.poster2 {
+    background: #f0f2ff;
+    .box-shadow(0 0 45px #544db5 inset);
+    text-align: center;
+    h1 {
+      color: #97006a;
+    }
+  }
   h1 {
     position: relative;
     color: darken(@brand-danger, 25%);
@@ -527,13 +535,28 @@ pre {
       width: @width;
       margin-right: -10px;
     }
+    .col-right {
+//      background: #bbb;
+      overflow: hidden;
+      position: relative;
+    }
     .logo {
-      position: static;
-      background: url("../img10/logo_f1.png") no-repeat center;
+      position: relative;
+      #gradient>.horizontal(#ffffff; rgba(255,255,255,0); 45%; 95%);
       height: @height;
       width: auto;
       margin: 0 @width 0 0 ;
-      text-indent: -30000px;
+      padding-top: 1px;
+//      text-indent: -30000px;
+      a {
+        background: url("../img10/logo_f2.png") no-repeat 9px 10px;
+        display: block;
+        height: 130px;
+//        margin: 9px 9px 0;
+        img {
+          display: none;
+        }
+      }
     }
     .terms {
       background-color: #E1D9E4;
@@ -546,6 +569,7 @@ pre {
 //      font-size: 16px;
       text-align: right;
       line-height: 1.5;
+      position: relative;
       h2 {
         margin: 0;
         height: 24px;
@@ -557,6 +581,23 @@ pre {
     h3,
     h2 {
       margin: 0;
+    }
+  }
+  #banner {
+    position: absolute;
+    width: 685px;
+    height: 135px;
+    overflow: hidden;
+    right: 0;
+    > .foto_0 {
+      position: absolute;
+      right: 0;
+      top: 0;
+//      .transition(all 8s);
+      &.move {
+        top: -28px;
+        right: -100px;
+      }
     }
   }
 

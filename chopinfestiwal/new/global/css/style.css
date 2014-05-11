@@ -266,6 +266,15 @@ article.poster:after {
   height: 110px;
   bottom: 0;
 }
+article.poster2 {
+  background: #f0f2ff;
+  -webkit-box-shadow: 0 0 45px #544db5 inset;
+  box-shadow: 0 0 45px #544db5 inset;
+  text-align: center;
+}
+article.poster2 h1 {
+  color: #97006a;
+}
 article h1 {
   position: relative;
   color: #8b211e;
@@ -492,13 +501,28 @@ pre {
     width: 200px;
     margin-right: -10px;
   }
+  .top-header .col-right {
+    overflow: hidden;
+    position: relative;
+  }
   .top-header .logo {
-    position: static;
-    background: url("../img10/logo_f1.png") no-repeat center;
+    position: relative;
+    background-image: -webkit-linear-gradient(left, color-stop(#ffffff 45%), color-stop(rgba(255, 255, 255, 0) 95%));
+    background-image: linear-gradient(to right, #ffffff 45%, rgba(255, 255, 255, 0) 95%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#00ffffff', GradientType=1);
     height: 133px;
     width: auto;
     margin: 0 200px 0 0;
-    text-indent: -30000px;
+    padding-top: 1px;
+  }
+  .top-header .logo a {
+    background: url("../img10/logo_f2.png") no-repeat 9px 10px;
+    display: block;
+    height: 130px;
+  }
+  .top-header .logo a img {
+    display: none;
   }
   .top-header .terms {
     background-color: #E1D9E4;
@@ -510,6 +534,7 @@ pre {
     color: #472e86;
     text-align: right;
     line-height: 1.5;
+    position: relative;
   }
   .top-header .terms h2 {
     margin: 0;
@@ -521,6 +546,22 @@ pre {
   .top-header h3,
   .top-header h2 {
     margin: 0;
+  }
+  #banner {
+    position: absolute;
+    width: 685px;
+    height: 135px;
+    overflow: hidden;
+    right: 0;
+  }
+  #banner > .foto_0 {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #banner > .foto_0.move {
+    top: -28px;
+    right: -100px;
   }
   .col-left {
     position: absolute;
