@@ -1,0 +1,66 @@
+.top-header .logo {
+  background: url("../img/header_bg_8.png") repeat-y center;
+}
+.sponsors .sponsors-h {
+  height: 44px !important;
+}
+.container {
+  box-shadow: -2px 0 15px #999999;
+  width: 960px !important;
+}
+.main-brand {
+  background-image: none !important;
+}
+.main-brand h1 {
+  filter: glow(color=#444444, strength=3);
+  display: block;
+}
+.col-left {
+  box-shadow: 4px 0 4px #bbb;
+}
+.col-left .mainmenu a {
+  background: transparent url(../img/bg_a_menu002.png);
+}
+.col-left .mainmenu a,
+.col-left,
+.container {
+  behavior: url(/pie/PIE.htc);
+}
+#veilIe8 {
+  background: #000;
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2000;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#ie8 {
+  background: #fff;
+  border: 1px solid #999;
+  left: 50%;
+  margin-left: -230px;
+  padding-bottom: 15px;
+  position: fixed;
+  text-align: center;
+  top: 150px;
+  width: 460px;
+  z-index: 2001;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+#ie8 button {
+  background-color: #CCD;
+  border: 1px solid #666;
+  font-weight: 800;
+  padding-bottom: 2px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+#ie8 button:hover {
+  background-color: #b7b7c8;
+}
