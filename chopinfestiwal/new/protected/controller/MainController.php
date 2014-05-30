@@ -119,6 +119,8 @@ class MainController extends DooController{
                             } else {
                                 $click = '';
                             }
+                            $width += 16;
+                            $height += 16;
                             $img = "<span class=\"foto_{$plik[2]}\" style=\"width:{$width}px;height:{$height}px\"$click>$img</span>";
                         }
                         $text .= $img;

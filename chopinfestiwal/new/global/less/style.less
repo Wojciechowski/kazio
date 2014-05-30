@@ -288,6 +288,7 @@ body {
 article {
   padding: 5px;
   border-bottom: 1px solid @brand-primary;
+  .clearfix();
   &.poster {
     position: relative;
     background-color: #eeE0DF;
@@ -325,6 +326,22 @@ article {
   > div {
     position: relative;
   }
+}
+.foto_l,
+.foto_r,
+.foto_0,
+.foto_c {
+  border: 1px solid #A8BBBB;
+  display: block;
+  margin: 5px 0;
+  text-align: center;
+  img {
+    margin-top: 7px;
+  }
+}
+.foto_l {
+  float: left;
+  margin-right: 10px;
 }
 
 footer {
@@ -735,7 +752,7 @@ pre {
 
 }
 
-//@media (min-width: 992px) {
+@media (min-width: 992px) {
   /* banner top*/
   .sponsors {
     > div {
@@ -785,7 +802,7 @@ pre {
       #gradient>.horizontal(#ffffff; rgba(255,255,255,0); 46%; 82%);
       height: @height;
       width: auto;
-      margin: 0 @width 0 0 ;
+//      margin: 0 @width 0 0 ;
       padding-top: 1px;
 //      text-indent: -30000px;
       a {
@@ -979,7 +996,7 @@ pre {
       top: 133px;
     }
   }
-//}
+}
 
 @media (min-width: 1200px) {
   .top-header {
