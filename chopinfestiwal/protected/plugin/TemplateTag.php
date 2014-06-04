@@ -3,7 +3,7 @@
 //register global/PHP functions to be used with your template files
 //You can move this to common.conf.php   $config['TEMPLATE_GLOBAL_TAGS'] = array('isset', 'empty');
 //Every public static methods in TemplateTag class (or tag classes from modules) are available in templates without the need to define in TEMPLATE_GLOBAL_TAGS 
-Doo::conf()->TEMPLATE_GLOBAL_TAGS = array('submenu', 'createForm', 'breadcrumbList', 'createList', 'pre', 'upper', 'tofloat', 'sample_with_args', 'debug', 'url', 'url2', 'function_deny', 'isset', 'empty');
+Doo::conf()->TEMPLATE_GLOBAL_TAGS = array('submenu', 'mainmenu', 'createForm', 'breadcrumbList', 'createList', 'pre', 'upper', 'tofloat', 'sample_with_args', 'debug', 'url', 'url2', 'function_deny', 'isset', 'empty');
 
 function submenu($list, $app_url, $section)
 {
@@ -26,6 +26,45 @@ function submenu($list, $app_url, $section)
         $submenu .= '</li>';
     }
     return $submenu;
+}
+
+// kreowanie głównego menu
+function mainmenu($list, $app_url, $section)
+{
+    $submenu = '';
+    foreach ($list as $row) {
+        if ($row->DaneMenu8[0]->link) {
+            $submenu .= '<li><a href="'
+                . $row->DaneMenu8[0]->link . '">'
+                . $row->DaneMenu8[0]->nazwa . '</a>';
+        } else {
+            $submenu .= '<li' . (($section == $row->id_m) ? ' class="active"' : '') . '><a href="'
+                . $app_url . '?grp=' . $row->menu . '&dzial=' . $row->id_m . '">'
+                . $row->DaneMenu8[0]->nazwa . '</a>';
+            if (isset($row->submenu)) {
+                $submenu .= '<ul>';
+                foreach ($row->submenu as $subrow) {
+                    $submenu .= '<li' . (($section == $subrow->id_m) ? ' class="active"' : '') . '><a href="'
+                        . $app_url . '?grp=' . $subrow->menu . '&dzial=' . $subrow->id_m . '">'
+                        . $subrow->DaneMenu8[0]->nazwa . '</a>';
+                    if (count($subrow->submenu)) {
+                        $submenu .= '<ul>';
+                        foreach ($subrow->submenu as $subrow2) {
+                            $submenu .= '<li' . (($section == $subrow2->id_m) ? ' class="active"' : '') . '><a href="'
+                                . $app_url . '?grp=' . $subrow2->menu . '&dzial=' . $subrow2->id_m . '">'
+                                . $subrow2->DaneMenu8[0]->nazwa . '</a>';
+                            $submenu .= '</li>';
+                        }
+                        $submenu .= '</ul>';
+                    }
+                    $submenu .= '</li>';
+                }
+                $submenu .= '</ul>';
+            }
+        }
+        $submenu .= '</li>';
+    }
+    return '<ul>' . $submenu . '</ul>';
 }
 
 

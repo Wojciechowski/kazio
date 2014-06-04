@@ -14,7 +14,7 @@ $.fn.Sponsors = function(param) {
         padd: 10,
         timer: 800,
         pause: 2000,
-        w_start: 45
+        w_start: 50
     }
 
     var that, header_box, headers, list_box, go, tim,

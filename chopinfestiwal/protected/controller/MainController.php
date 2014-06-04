@@ -217,6 +217,7 @@ class MainController extends DooController{
         $this->data['bodyClass'] .= ' dzial' . $this->data['section'];
 
         $menu = $DaneMenuF->relate('DaneMenu8', array('where'=>'menu = 1 AND dane_menu_f.jest = 1', 'asc'=>'dane_menu_f.lp'));
+
         foreach ($menu as $row) {
             if ($row->id_m == $this->data['section']) {
                 $this->data['sectionTitle'] = $row->DaneMenu8[0]->nazwa;
