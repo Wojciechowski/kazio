@@ -308,6 +308,12 @@ article.poster:after {
 article.poster > div {
   z-index: 1;
 }
+article.poster .foto_c {
+  border: 0;
+  background-color: transparent;
+  display: inline;
+  margin: 5px;
+}
 article.poster2 {
   background: #f0f2ff;
   -webkit-box-shadow: 0 0 45px #544db5 inset;

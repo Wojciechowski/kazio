@@ -16,9 +16,9 @@ class MainController extends DooController{
     }
 
     public function index(){
-        $wspolorganizatorzy = 198;// 198 202
-        $glownybaner = 199;// 199 203
-        $media = 200;// 200 204
+        $wspolorganizatorzy = 202;// 198 202
+        $glownybaner = 203;// 199 203
+        $media = 204;// 200 204
 
         $this->data['group'] = (isset($_GET['grp'])) ? $_GET['grp']: 1;
         $this->data['section'] = (isset($_GET['dzial'])) ? $_GET['dzial']: 51;
@@ -28,7 +28,8 @@ class MainController extends DooController{
             $this->menu();
 
         // współorganizatorzy
-        $banner = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$wspolorganizatorzy.' AND jest = 1', 'limit' => 1));
+        $banner = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$wspolorganizatorzy, 'limit' => 1));
+//        $banner = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$wspolorganizatorzy.' AND jest = 1', 'limit' => 1));
         if ($banner) {
             $this->data['topbanner'] = $this->parseContent($banner);
         }
@@ -40,7 +41,8 @@ class MainController extends DooController{
         }
 
         // media
-        $banner3 = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$media.' AND jest = 1', 'desc' => 'id', 'limit' => 1));
+        $banner3 = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$media, 'desc' => 'id', 'limit' => 1));
+//        $banner3 = Doo::db()->find('DaneArtykuly8', array('where' => 'grupa = '.$media.' AND jest = 1', 'desc' => 'id', 'limit' => 1));
         if ($banner3) {
             $this->data['bottombanner'] = $this->parseContent($banner3);
         }
