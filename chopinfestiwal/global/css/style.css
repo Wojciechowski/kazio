@@ -378,12 +378,12 @@ pre {
 }
 #pMedia img {
   border: 4px solid #fff;
-  -webkit-box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
-  box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
 }
 #pMedia img:hover {
-  -webkit-box-shadow: 3px 2px 8px rgba(0, 50, 200, 0.65);
-  box-shadow: 3px 2px 8px rgba(0, 50, 200, 0.65);
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 50, 200, 0.7);
+  box-shadow: 1px 1px 10px rgba(0, 50, 200, 0.7);
 }
 #pMedia .foto_l,
 #pMedia .foto_r,
@@ -536,7 +536,7 @@ pre {
     border: 0;
     bottom: 0;
     padding: 0 20px 30px;
-    right: 0;
+    left: 0;
   }
   #pMedia li.start {
     margin-right: 0 !important;
@@ -551,11 +551,12 @@ pre {
   }
   #pMedia p {
     background: #FFF;
+    border: 1px solid #bbb;
     border-top-left-radius: 5px;
     bottom: 0;
-    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    margin: 0;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    margin: 0 0 0 10px;
     padding: 0 15px 2px 5px;
     position: absolute;
     right: auto;
@@ -563,9 +564,6 @@ pre {
     transition: right 1s;
     white-space: nowrap;
     z-index: 2;
-  }
-  #pMedia p.active {
-    right: 0;
   }
 }
 .grp205 .main-brand h1,

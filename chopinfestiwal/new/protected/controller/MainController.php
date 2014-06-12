@@ -16,9 +16,9 @@ class MainController extends DooController{
     }
 
     public function index(){
-        $wspolorganizatorzy = 202;// 198 202
-        $glownybaner = 203;// 199 203
-        $media = 204;// 200 204
+        $wspolorganizatorzy = 202;// ID diału z listą współorganizatoów
+        $glownybaner = 203;// ID diału z obrazkami banera
+        $media = 204;// ID diału z patronatami medialnymi
 
         $this->data['group'] = (isset($_GET['grp'])) ? $_GET['grp']: 1;
         $this->data['section'] = (isset($_GET['dzial'])) ? $_GET['dzial']: 51;

@@ -1,3 +1,6 @@
+.nav-collapse {
+  color: #000;
+}
 .top-header .logo {
   background-color: transparent;
   background-image: url("../img/header_bg_8.png") !important;
@@ -33,6 +36,15 @@ body > div.container {
 }
 .main .col-left .mainmenu a {
   background: transparent url(../img/bg_a_menu002.png);
+}
+#pMedia a {
+  display: inline-block;
+  border: 1px solid #999;
+  margin: 0;
+}
+#pMedia a .foto_0,
+#pMedia a img {
+  margin: 0;
 }
 .col-left .mainmenu a,
 .main .col-left,

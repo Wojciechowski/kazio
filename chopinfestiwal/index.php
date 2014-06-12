@@ -1,6 +1,6 @@
 <?php
-ini_set( 'display_errors', 'On' );
-error_reporting( E_ALL );
+//ini_set( 'display_errors', 'On' );
+//error_reporting( E_ALL );
 include './protected/config/common.conf.php';
 include './protected/config/routes.conf.php';
 include './protected/config/db.conf.php';
