@@ -7,7 +7,7 @@
  */
 
 $.fn.carousel = function(){
-    var that,
+    var that, // #banner
         tm,
         option = {
             start: 100,
@@ -19,21 +19,38 @@ $.fn.carousel = function(){
             var list = that.children(),
                 len = list.length,
                 i = -1,
+                action = 0,
+
+                onOff = function(){
+                    if (that.css('display') != 'none') {
+                        if (action == 0) {
+                            list.css({'right': '-85px', 'opacity': 0});
+                            i = -1;
+                            tm = setTimeout(swap, 10);
+                            action = 1;
+                        }
+                    } else if (action == 1) {
+                        clearTimeout(tm);
+                        $('img', list).css({'width': '100%', 'height': '100%'})
+                        list.eq(i).stop(true, true);
+                        action = 0
+                    }
+                },
 
                 swap = function(){
-                    var n = i + 1;
-
-                    if (n == len) {
-                        n = 0;
-                    }
                     list.eq(i).animate({
                         opacity: 0
                     }, option.swap);
-                    list.eq(n).animate({
+
+                    i++;
+                    if (i == len) {
+                        i = 0;
+                    }
+
+                    list.eq(i).children('img').css({'width': '88%', 'height': '88%'})
+                    list.eq(i).animate({
                         opacity: 1
                     }, option.swap, function(){
-                        list.eq(i).children('img').css({'width': '88%', 'height': '88%'})
-                        i = n;
                         tm = setTimeout(move, option.swap);
                     });
                 },
@@ -48,10 +65,11 @@ $.fn.carousel = function(){
 
                 };
 
-            $('img', list).css({'width': '88%', 'height': '88%'})
-            list.css({'right': '-85px'});
-            list.css('opacity', 0);
-            tm = setTimeout(swap, 10);
+            $(window).resize(function(){
+                onOff();
+            });
+
+            onOff();
         };
 
     return this.each(function(){
@@ -80,8 +98,6 @@ $(document).ready(function() {
 
         st = setTimeout(menuHeight, 50);
 
-
-
     /**
      * Menu
      */
@@ -99,53 +115,5 @@ $(document).ready(function() {
         return false;
     })
 
-    /**
-     * Slideshow
-     */
-    var box = $('#slideshow'),
-        im = box.children('img'),
-        l = im.length,
-        pause = 3000,
-        i = 0,
-        action = 0,
-        etc,
-
-        start = function(){
-            var pos = box.parent().css('display');
-
-            if (pos == 'block') {
-                if (action == 0) {
-                    // start
-                    etc = setTimeout(rotor, pause);
-                    action++;
-                }
-            } else {
-                // stop
-                clearTimeout(etc);
-                action = 0;
-            }
-        },
-
-        rotor = function(){
-            var j = i + 1;
-            if (j == l) j = 0;
-            im.eq(j).css({'top':133});
-            im.eq(i).animate({
-                'top': -133
-            },500);
-            im.eq(j).animate({
-                'top': 0
-            },500);
-            i++;
-            if (i == l) i = 0;
-            etc=setTimeout(rotor, pause);
-        };
-
-    im.eq(0).css({'top':0});
-    start();
-
-    $(window).resize(function(){
-        start();
-    })
     $('#banner').carousel();
 });
