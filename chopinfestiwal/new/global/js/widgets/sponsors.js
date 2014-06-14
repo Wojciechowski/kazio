@@ -27,15 +27,13 @@ $.fn.Sponsors = function(param) {
             var height = list_box.innerHeight();
 
             if (height > 0 && height < param.w_start) {
-                console.log('start ', height);
                 if (action == 0) {
                     tim = setTimeout(rotor, param.pause);
                     action++;
                 }
-            } else {
+            } else if (action != 0) {
                 clearTimeout(tim);
                 action = 0;
-                console.log('stop ', height, param.w_start+'px');
             }
         },
 

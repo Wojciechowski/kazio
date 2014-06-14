@@ -56,7 +56,7 @@ body {
 
 .top-header {
   position: relative;
-//  #gradient>.horizontal(#ffffff; #472e86; 55%; 80%);
+  #gradient>.horizontal(#fff; #472e86; 50%; 75%);
 //  height: 128px;
   .col-md-2 {
     z-index: 3;
@@ -89,7 +89,6 @@ body {
 }
 .main-brand {
   position: absolute;
-//  background: url("../img10/drzewo_small.png") no-repeat right top;
   top: 0;
   right: 0;
   z-index: 1;
@@ -209,11 +208,14 @@ body {
   .sponsors-li {
     font-size: 15px;
     li {
+      min-height: 28px;
       span {
         display: table-cell;
         min-height: @spons-li-h;
         vertical-align: middle;
         &.foto_0 {
+          background-color: transparent;
+          border: 0;
           padding-right: 8px;
           img {
             margin-top: 0;
@@ -303,8 +305,10 @@ article {
     &:before,
     &:after {
       content: '';
+      display: block;
       position: absolute;
-      width: 100%;
+//      min-width: 100%;
+      right: 0;
       left: 0;
     }
     &:before {
@@ -414,17 +418,16 @@ pre {
       margin-bottom: 0;
       margin-right: 230px;
       margin-top: 0;
-//      text-align: center;
       img {
         margin: 12px 22px;
         width: auto;
       }
     }
     .terms {
-//      width: 200px;
       h2 {
         font-size: 15px;
         margin-bottom: 1px;
+        line-height: 1;
       }
       span {
         display: inline;
@@ -432,17 +435,22 @@ pre {
     }
   }
   .main-brand {
-    background: url("../img10/drzewo_small.png") no-repeat right top;
+    background: url("../img10/drzewo.png") no-repeat right -2px;
+    height: 137px;
     h1 {
       width: 200px;
       margin-top: 4px;
       font-size: 1.5em;
     }
   }
+  .facebook {
+    display: block;
+    position: absolute;
+    top: -22px;
+  }
 
   /* banner top*/
   #banner {
-//    display: block;
     position: absolute;
     width: 685px;
     height: 140px;
@@ -455,7 +463,6 @@ pre {
       right: 0;
       text-align: left;
       top: 0;
-      //      .transition(all 8s);
       &.move {
         top: -28px;
         right: -100px;
@@ -466,9 +473,6 @@ pre {
     }
   }
   .top-banner {
-    .navbar-header {
-//      float: none;
-    }
     .foto_0 {
       background-color: transparent;
       border: 0;
@@ -482,17 +486,15 @@ pre {
     > div {
       position: relative;
       background: #e1d9e4;
-//      border-bottom: 1px solid rgba(0,0,0,.2);
       height: @spons-li-h;
       line-height: @spons-li-h - 2;
     }
     .sponsors-h {
       position: relative;
       background: #9e90bc;
-//      text-align: right;
       height: 25px;
       .navbar-toggle {
-//        display: none;
+        display: none;
       }
     }
     .spons-h {
@@ -551,11 +553,6 @@ pre {
         display: none;
       }
     }
-  }
-  .facebook {
-    display: block;
-    position: absolute;
-    top: 0;
   }
 
   /* sponsorzy - dół */

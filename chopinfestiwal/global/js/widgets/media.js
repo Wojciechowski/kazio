@@ -89,7 +89,7 @@ $.fn.PatronMedia = function(param){
                     etc = setTimeout(rotate, param.w_start);
                     action++;
                 }
-            } else {
+            } else if (action != 0) {
                 // stop
                 clearTimeout(etc);
                 action = 0;

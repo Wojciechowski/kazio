@@ -14,7 +14,7 @@ $.fn.Sponsors = function(param) {
         padd: 10,
         timer: 800,
         pause: 2000,
-        w_start: 50
+        w_start: 45
     }
 
     var that, header_box, headers, list_box, go, tim,
@@ -31,7 +31,7 @@ $.fn.Sponsors = function(param) {
                     tim = setTimeout(rotor, param.pause);
                     action++;
                 }
-            } else {
+            } else if (action != 0) {
                 clearTimeout(tim);
                 action = 0;
             }

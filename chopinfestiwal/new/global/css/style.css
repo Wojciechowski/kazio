@@ -46,6 +46,10 @@ body {
 }
 .top-header {
   position: relative;
+  background-image: -webkit-gradient(linear, left 50%, right 50%, color-stop(50%, #ffffff), color-stop(75%, #472e86));
+  background-image: linear-gradient(to right, #ffffff 50%, #472e86 75%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff472e86', GradientType=1);
 }
 .top-header .col-md-2 {
   z-index: 3;
@@ -191,12 +195,17 @@ body {
 .sponsors .sponsors-li {
   font-size: 15px;
 }
+.sponsors .sponsors-li li {
+  min-height: 28px;
+}
 .sponsors .sponsors-li li span {
   display: table-cell;
   min-height: 44px;
   vertical-align: middle;
 }
 .sponsors .sponsors-li li span.foto_0 {
+  background-color: transparent;
+  border: 0;
   padding-right: 8px;
 }
 .sponsors .sponsors-li li span.foto_0 img {
@@ -204,6 +213,7 @@ body {
 }
 /* Column left */
 .col-left {
+  background-image: -webkit-gradient(linear, 50% top, 50% bottom, color-stop(44px, #472e86), color-stop(670px, #9780ce));
   background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
   background-image: linear-gradient(to bottom, #472e86 44px, #9780ce 670px);
   background-repeat: repeat-x;
@@ -291,8 +301,9 @@ article.poster {
 article.poster:before,
 article.poster:after {
   content: '';
+  display: block;
   position: absolute;
-  width: 100%;
+  right: 0;
   left: 0;
 }
 article.poster:before {
@@ -407,17 +418,24 @@ pre {
   .top-header .terms h2 {
     font-size: 15px;
     margin-bottom: 1px;
+    line-height: 1;
   }
   .top-header .terms span {
     display: inline;
   }
   .main-brand {
-    background: url("../img10/drzewo_small.png") no-repeat right top;
+    background: url("../img10/drzewo.png") no-repeat right -2px;
+    height: 137px;
   }
   .main-brand h1 {
     width: 200px;
     margin-top: 4px;
     font-size: 1.5em;
+  }
+  .facebook {
+    display: block;
+    position: absolute;
+    top: -22px;
   }
   /* banner top*/
   #banner {
@@ -460,6 +478,9 @@ pre {
     position: relative;
     background: #9e90bc;
     height: 25px;
+  }
+  .sponsors .sponsors-h .navbar-toggle {
+    display: none;
   }
   .sponsors .spons-h {
     position: absolute !important;
@@ -517,11 +538,6 @@ pre {
   }
   .sponsors .sponsors-li p {
     display: none;
-  }
-  .facebook {
-    display: block;
-    position: absolute;
-    top: 0;
   }
   /* sponsorzy - dół */
   #pMedia {
@@ -601,6 +617,7 @@ pre {
   background: #737225;
 }
 .grp205 .col-left {
+  background-image: -webkit-gradient(linear, 50% top, 50% bottom, color-stop(44px, #03918b), color-stop(670px, #03aea7));
   background-image: -webkit-linear-gradient(top, #03918b 44px, #03aea7 670px);
   background-image: linear-gradient(to bottom, #03918b 44px, #03aea7 670px);
   background-repeat: repeat-x;
@@ -636,6 +653,7 @@ pre {
   background: #888d2e;
 }
 .grp193 .col-left {
+  background-image: -webkit-gradient(linear, 50% top, 50% bottom, color-stop(44px, #a6ac38), color-stop(670px, #c7ce43));
   background-image: -webkit-linear-gradient(top, #a6ac38 44px, #c7ce43 670px);
   background-image: linear-gradient(to bottom, #a6ac38 44px, #c7ce43 670px);
   background-repeat: repeat-x;
@@ -671,6 +689,7 @@ pre {
   background: #c07f00;
 }
 .grp173 .col-left {
+  background-image: -webkit-gradient(linear, 50% top, 50% bottom, color-stop(44px, #e49700), color-stop(670px, #ffb31b));
   background-image: -webkit-linear-gradient(top, #e49700 44px, #ffb31b 670px);
   background-image: linear-gradient(to bottom, #e49700 44px, #ffb31b 670px);
   background-repeat: repeat-x;
@@ -710,6 +729,7 @@ pre {
 }
 .grp157 .col-left,
 .grp167 .col-left {
+  background-image: -webkit-gradient(linear, 50% top, 50% bottom, color-stop(44px, #544087), color-stop(670px, #b7adce));
   background-image: -webkit-linear-gradient(top, #544087 44px, #b7adce 670px);
   background-image: linear-gradient(to bottom, #544087 44px, #b7adce 670px);
   background-repeat: repeat-x;
@@ -782,7 +802,7 @@ pre {
   }
   .top-header .logo {
     position: relative;
-    background-image: -webkit-linear-gradient(left, color-stop(#ffffff 46%), color-stop(rgba(255, 255, 255, 0) 82%));
+    background-image: -webkit-gradient(linear, left 50%, right 50%, color-stop(46%, #ffffff), color-stop(82%, rgba(255, 255, 255, 0)));
     background-image: linear-gradient(to right, #ffffff 46%, rgba(255, 255, 255, 0) 82%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#00ffffff', GradientType=1);
@@ -844,6 +864,7 @@ pre {
   .col-left {
     position: absolute;
     background: #9780ce;
+    background-image: -webkit-gradient(linear, 50% top, 50% bottom, color-stop(44px, #472e86), color-stop(670px, #9780ce));
     background-image: -webkit-linear-gradient(top, #472e86 44px, #9780ce 670px);
     background-image: linear-gradient(to bottom, #472e86 44px, #9780ce 670px);
     background-repeat: repeat-x;
