@@ -56,10 +56,7 @@ $.fn.PatronMedia = function(param){
 
             if (i > -1) {
                 var li = list.eq(i);
-                li.css({
-                    opacity: 1,
-                    left: 0
-                }).animate({
+                li.animate({
                     left: li.outerWidth(true) * -1
                 }, param.time, function(){
                     etc = setTimeout(step2, param.pause);
@@ -73,6 +70,10 @@ $.fn.PatronMedia = function(param){
                 opacity: 0
             }, param.time, function(){
                 etc = setTimeout(rotate, param.time);
+                list.css({
+                    opacity: 1,
+                    left: 0
+                })
             })
         },
 
