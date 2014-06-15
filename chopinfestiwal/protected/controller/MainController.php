@@ -16,9 +16,9 @@ class MainController extends DooController{
     }
 
     public function index(){
-        $wspolorganizatorzy = 202;// 198 202
-        $glownybaner = 203;// 199 203
-        $media = 204;// 200 204
+        $wspolorganizatorzy = 202;// ID diału z listą współorganizatoów
+        $glownybaner = 203;// ID diału z obrazkami banera
+        $media = 204;// ID diału z patronatami medialnymi
 
         $this->data['group'] = (isset($_GET['grp'])) ? $_GET['grp']: 1;
         $this->data['section'] = (isset($_GET['dzial'])) ? $_GET['dzial']: 51;
@@ -112,7 +112,8 @@ class MainController extends DooController{
                         if (file_exists($path . $m)) $plik[0] = $m;
 
                         list($width, $height, $type, $attr) = getimagesize($path . $plik[0]);
-                        $img = "<img src=\"$path{$plik[0]}\" style=\"width:{$width}px;height:{$height}px\" alt=\"\">";
+                        $img = "<img src=\"$path"
+                            . "{$plik[0]}\" style=\"width:{$width}px;height:{$height}px\" alt=\"\">";
                         if ($plik[1] == 1) {
                             if ($d) {
                                 $click = " onclick=\"foto('$d')\"";
@@ -121,7 +122,8 @@ class MainController extends DooController{
                             }
                             $width += 16;
                             $height += 16;
-                            $img = "<span class=\"foto_{$plik[2]}\" style=\"width:{$width}px;height:{$height}px\"$click>$img</span>";
+                            $img = "<span class=\"foto_{$plik[2]}\" style=\"width:"
+                                . "{$width}px;height:{$height}px\"$click>$img</span>";
                         }
                         $text .= $img;
                     }
@@ -172,29 +174,32 @@ class MainController extends DooController{
         }
 
         if (preg_match($pat, $text)) {
+            // wstawianie obrazków
             $t_foto = preg_split("/[\n,]/", $row->foto);
             $t_text = preg_split($pat, $text);
             $text = '';
-            foreach ($t_text as $k => $w) {
+            for ($k = 0, $end = count($t_text) - 1; $k < $end; $k++) {
+                $w = $t_text[$k];
                 $text .= $w;
                 $d = '';
                 if (isset($t_foto[$k]) && preg_match('/|/', $t_foto[$k])) {
                     $plik = explode('|', $t_foto[$k]);
-                    //$path = preg_replace('/new\//', '', $this->data['app_url']);
                     $path = '';
                     if (file_exists($path . $plik[0])) $d = $path . $plik[0];
                     $m = preg_replace('/\.(jpg|png|gif)$/i', '__.$1', $plik[0]);
                     if (file_exists($path . $m)) $plik[0] = $m;
 
                     list($width, $height, $type, $attr) = getimagesize($path . $plik[0]);
-                    $img = "<img src=\"$path{$plik[0]}\" style=\"width:{$width}px;height:{$height}px\" alt=\"\">";
+                    $img = "<img src=\"$path{$plik[0]}\" style=\"width:"
+                        . "{$width}px;height:{$height}px\" alt=\"\">";
                     if ($plik[1] == 1) {
                         if ($d) {
                             $click = " onclick=\"foto('$d')\"";
                         } else {
                             $click = '';
                         }
-                        $img = "<span class=\"foto_{$plik[2]}\" style=\"width:{$width}px;height:{$height}px\"$click>$img</span>";
+                        $img = "<span class=\"foto_{$plik[2]}\" style=\"width:"
+                            . "{$width}px;height:{$height}px\"$click>$img</span>";
                     }
                     $text .= $img;
                 }
@@ -257,7 +262,6 @@ class MainController extends DooController{
             }
             $this->data['menu'][] = $row;
         }
-        //$this->data['print'] = "test\n" . print_r($menu, true);
     }
 
 }
