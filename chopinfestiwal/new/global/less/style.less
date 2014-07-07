@@ -297,48 +297,52 @@ article {
   padding: 5px;
   border-bottom: 1px solid @brand-primary;
   .clearfix();
-  &.poster {
-    position: relative;
-    background-color: #eeE0DF;
-    padding: 5px 20px;
-    text-align: center;
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-//      min-width: 100%;
-      right: 0;
-      left: 0;
+  .home & {
+    &.poster {
+      position: relative;
+      background-color: #eeE0DF;
+      padding: 5px 20px;
+      text-align: center;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        //      min-width: 100%;
+        right: 0;
+        left: 0;
+      }
+      &:before {
+        background: url("../img10/ramka_l.png") no-repeat left top, url("../img10/ramka_p.png") no-repeat right top;
+        height: 105px;
+        top: 0;
+      }
+      &:after {
+        background: url("../img10/ramka_l.png") no-repeat left bottom, url("../img10/ramka_p.png") no-repeat right bottom;
+        height: 110px;
+        bottom: 0;
+      }
+      > div {
+        z-index: 1;
+      }
+      .foto_0,
+      .foto_c {
+        border: 0;
+        background-color: transparent;
+        display: inline;
+        margin: 5px;
+      }
     }
-    &:before {
-      background: url("../img10/ramka_l.png") no-repeat left top, url("../img10/ramka_p.png") no-repeat right top;
-      height: 105px;
-      top: 0;
+    &.poster2 {
+      background: #f0f2ff;
+      .box-shadow(0 0 45px #544db5 inset);
+      padding: 5px 20px;
+      text-align: center;
+      h1 {
+        color: #97006a;
+      }
     }
-    &:after {
-      background: url("../img10/ramka_l.png") no-repeat left bottom, url("../img10/ramka_p.png") no-repeat right bottom;
-      height: 110px;
-      bottom: 0;
-    }
-    > div {
-      z-index: 1;
-    }
-    .foto_c {
-      border: 0;
-      background-color: transparent;
-      display: inline;
-      margin: 5px;
-    }
-  }
-  &.poster2 {
-    background: #f0f2ff;
-    .box-shadow(0 0 45px #544db5 inset);
-    padding: 5px 20px;
-    text-align: center;
-    h1 {
-      color: #97006a;
-    }
+
   }
   h1 {
     position: relative;
@@ -767,15 +771,6 @@ pre {
     .top-header {
       .terms {
         background-color: #F5F5F5;
-      }
-    }
-    #mail {
-      input {
-        background: #D8D2E3;
-        border-color: #888D2E;
-      }
-      button {
-        background-color: #6e687c;
       }
     }
   }

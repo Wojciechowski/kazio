@@ -17,7 +17,7 @@ $config['PROTECTED_FOLDER'] = 'protected/';
 $config['BASE_PATH'] = realpath('..').'/dooframework/';
 
 //for production mode use 'prod'
-$config['APP_MODE'] = 'prod';
+$config['APP_MODE'] = 'dev';
 
 //----------------- optional, if not defined, default settings are optimized for production mode ----------------
 //if your root directory is /var/www/ and you place this in a subfolder eg. 'app', define SUBFOLDER = '/app/'
@@ -82,7 +82,7 @@ $config['ERROR_404_ROUTE'] = '/error';
  *     .....
  * } ?>
  *
- * You would need to enable autoload to use Namespace classes in index.php
+ * You would need to enable autoload to use Namespace classes in index_.php
  * spl_autoload_register('Doo::autoload');
  *
  * $config['APP_NAMESPACE_ID'] = 'myapp';

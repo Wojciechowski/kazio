@@ -5,13 +5,15 @@
  * version: 0.3
  * author: Piotr Wojciechowski :: piotr.wojciechowski@kontakt.waw.pl
  * create: 04-03-2014
+ *
  */
 
 $.fn.PatronMedia = function(param){
     param = {
         time: 800,
         pause: 2000,
-        w_start: 45
+        w_start: 45,
+        test: 1
     }
 
     var that, list_box, list, len, box_len, max, etc,
@@ -21,7 +23,7 @@ $.fn.PatronMedia = function(param){
         /**
          * zmiana obrazków
          */
-        rotate = function(){
+            rotate = function(){
             i++;
             if (i == len) {
                 i = 0;
@@ -64,7 +66,7 @@ $.fn.PatronMedia = function(param){
             }
         },
 
-        // drugi etap animacji obrazka
+    // drugi etap animacji obrazka
         step2 = function(){
             list.eq(i).animate({
                 opacity: 0
@@ -80,7 +82,7 @@ $.fn.PatronMedia = function(param){
         /**
          * uruchamianie/zatrzymywanie animacji
          */
-        start = function(){
+            start = function(){
             var pos = that.css('position');
 
             if (pos == 'fixed') {
@@ -99,7 +101,7 @@ $.fn.PatronMedia = function(param){
         /**
          * Inicjowanie banera
          */
-        init = function(){
+            init = function(){
             var block = that.children('.blok'),
                 i = -1;
 
