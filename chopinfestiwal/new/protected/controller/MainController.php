@@ -222,6 +222,7 @@ class MainController extends DooController{
         $this->data['bodyClass'] = 'grp' . ((isset($_GET['grp'])) ? $_GET['grp']: 1);
         $this->data['bodyClass'] .= ((!isset($_GET['dzial']) || $_GET['dzial'] == 51) ? ' home': '');
         $this->data['bodyClass'] .= ' dzial' . $this->data['section'];
+        $this->data['print'] .= 'home: dział='.isset($_GET['dzial']).' 51='.(isset($_GET['dzial']) && $_GET['dzial'] == 51);
 
         $menu = $DaneMenuF->relate('DaneMenu8', array('where'=>'menu = 1 AND dane_menu_f.jest = 1', 'asc'=>'dane_menu_f.lp'));
 

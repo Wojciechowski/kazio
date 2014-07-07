@@ -144,7 +144,7 @@
                 </ul>
             </nav>
 
-            <form action="/chopinfestiwal/new/index.php" method="post" id="mail">
+            <form action="/chopinfestiwal/new/index_.php" method="post" id="mail">
                     <p class="text-center">Jeśli chcesz otrzymywać aktualne informacje<span class="more">...<a href="#">>>></a></span>
                     <span class="text hide">o&nbsp;koncertach i imprezach organizowanych przez nasze towarzystwo, podaj swój adres e-mail i&nbsp;naciśnij [Zapisz].<br>
                     Zaś jeśli będziesz chciał zrezygnować - wpisz adres <span class="nbsp">e-mail</span> i naciśnij [Wypisz]
@@ -204,7 +204,7 @@
         </div>
     </footer>
 
-  <!-- if isset({{print1}}) -->
+  <!-- if isset({{print}}) -->
 <pre>
   {{print}}
 </pre>
@@ -217,20 +217,17 @@
         </div>
     </div>
     <!-- endif -->
-  <!--group = {{group}}<br>
-  section = {{section}}-->
+    <!-- if isset({{print}}) -->
+    {{print}}
+    <!-- endif -->
 </div>
 
 
 <script src='global/js/jquery.min.js'></script>
 <script src='global/js/bootstrap/collapse.js'></script>
 <script src='global/js/widgets/sponsors.js'></script>
-<script src='global/js/widgets/media.js'></script>
+<script src='global/js/widgets/media.min.js'></script>
 <script src='global/js/main.js'></script>
-<!--<script language="javascript">AC_FL_RunContent = 0;</script>
-<script src="global/js/AC_RunActiveContent.js"></script>
-<script src="global/js/jquery-1.10.2.min.js"></script>
-<script src="global/js/main.js"></script>-->
 
 <!-- if isset({{skrypt}}) --><script src="{{skrypt}}"></script><!-- endif -->
 <!--[if lt IE 9]>

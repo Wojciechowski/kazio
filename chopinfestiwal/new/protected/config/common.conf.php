@@ -80,7 +80,7 @@ $config['ERROR_404_ROUTE'] = '/error';
  *     .....
  * } ?>
  *
- * You would need to enable autoload to use Namespace classes in index.php 
+ * You would need to enable autoload to use Namespace classes in index_.php
  * spl_autoload_register('Doo::autoload');
  *
  * $config['APP_NAMESPACE_ID'] = 'myapp';
