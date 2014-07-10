@@ -10,6 +10,7 @@
 class MainController extends DooController{
 
     public $data;
+    public $home;
 
     function __construct() {
         $this->data['app_url'] = Doo::conf()->APP_URL;
@@ -71,6 +72,7 @@ class MainController extends DooController{
 
         $articles = Doo::db()->find('DaneArtykuly8', array('where' => $where, 'asc' => $order));
 
+        $lenght = count($articles);
         $search = array ('/( [azwoi]) /i',
             '/(„[azwoi]) /i',
             '/("[azwoi]) /i',
@@ -137,6 +139,9 @@ class MainController extends DooController{
                 $text = preg_replace('/\{File:\w+:\w+(:\w+)?\}{1}/', $zmiana, $text);
             }
             $this->data['articles'][] = array('id' => $row->id, 'title' => $row->tytul, 'content' => $text, 'class' => $row->class);
+            if (!$this->home && $lenght > 1) {
+                $this->data['list'][] = array('id' => $row->id, 'title' => $row->tytul);
+            }
         }
 
         $update = Doo::db()->find('DaneAktualizacja', array('where' => 'gdzie = 2', 'desc' => 'czas', 'limit' => 1));
@@ -220,9 +225,11 @@ class MainController extends DooController{
         $DaneMenuF = new DaneMenuF;
 
         $this->data['bodyClass'] = 'grp' . ((isset($_GET['grp'])) ? $_GET['grp']: 1);
-        $this->data['bodyClass'] .= ((!isset($_GET['dzial']) || $_GET['dzial'] == 51) ? ' home': '');
         $this->data['bodyClass'] .= ' dzial' . $this->data['section'];
-        $this->data['print'] .= 'home: dział='.isset($_GET['dzial']).' 51='.(isset($_GET['dzial']) && $_GET['dzial'] == 51);
+        if (!isset($_GET['dzial']) || $_GET['dzial'] == 51) {
+            $this->data['bodyClass'] .= ' home';
+            $this->home = true;
+        }
 
         $menu = $DaneMenuF->relate('DaneMenu8', array('where'=>'menu = 1 AND dane_menu_f.jest = 1', 'asc'=>'dane_menu_f.lp'));
 
