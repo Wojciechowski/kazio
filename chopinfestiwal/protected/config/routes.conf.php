@@ -8,6 +8,7 @@
  */
  
 $route['*']['/'] = array('MainController', 'index');
+$route['*']['/baner'] = array('TestController', 'banner');
 $route['*']['/error'] = array('ErrorController', 'index');
 $route['*']['/admin'] = array('AdminController', 'index');
 $route['*']['/admin/out'] = array('AdminController', 'out');

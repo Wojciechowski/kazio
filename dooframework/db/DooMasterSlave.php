@@ -36,7 +36,7 @@
  *                   );
  * </code>
  *
- * <p>In the bootstrap index.php you would need to call the <b>useDbReplicate</b> method.</p>
+ * <p>In the bootstrap index_.php you would need to call the <b>useDbReplicate</b> method.</p>
  * <code>
  * Doo::useDbReplicate();
  * Doo::db()->setMap($dbmap);

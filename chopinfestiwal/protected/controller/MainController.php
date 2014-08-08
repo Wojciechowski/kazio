@@ -209,11 +209,12 @@ class MainController extends DooController{
                     $text .= $img;
                 }
             }
-        } else if (preg_match('/\{File:(\w+):(\w+)(:.*)?\}{1}/', $text, $dane)) {
+            $text .= $t_text[count($t_text) - 1];
+        } else if (preg_match('/(\{File:(\w+):(\w+)(:.*)?\})?/', $text, $dane)) {
             include_once($dane[1].'.php');
             $parametr = ($dane[3]) ? $dane[3]: '';
             $zmiana = $dane[2]($parametr);
-            $text = preg_replace('/\{File:\w+:\w+(:\w+)?\}{1}/', $zmiana, $text);
+            $text = preg_replace('/(\{File:\w+:\w+(:\w+)?\})?/', $zmiana, $text);
         }
         return array('id' => $row->id, 'title' => $row->tytul, 'content' => $text, 'class' => $row->class);
     }

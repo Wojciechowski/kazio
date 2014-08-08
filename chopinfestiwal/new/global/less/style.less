@@ -304,12 +304,21 @@ article {
   padding: 5px;
   border-bottom: 1px solid @brand-primary;
   .clearfix();
+  &.poster {
+    position: relative;
+    padding: 5px 20px;
+    text-align: center;
+    .foto_0,
+    .foto_c {
+      border: 0;
+      background-color: transparent;
+      display: inline;
+      margin: 5px;
+    }
+  }
   .home & {
     &.poster {
-      position: relative;
       background-color: #eeE0DF;
-      padding: 5px 20px;
-      text-align: center;
       &:before,
       &:after {
         content: '';

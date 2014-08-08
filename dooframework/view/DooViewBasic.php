@@ -375,11 +375,11 @@ class DooViewBasic {
         if($process==false){
 			//includes user defined template tags for template use
             $this->loadTagClass();
-            include $this->rootCompiledPath . $this->layoutFileName . '/' . $viewFolder . '/index.php';
+            include $this->rootCompiledPath . $this->layoutFileName . '/' . $viewFolder . '/index_.php';
         }
         else{
             $lfilename = $this->rootViewPath . $this->layoutFileName . '.html';
-			$cfilename = $this->rootCompiledPath . $this->layoutFileName . '/' . $viewFolder . '/index.php';
+			$cfilename = $this->rootCompiledPath . $this->layoutFileName . '/' . $viewFolder . '/index_.php';
 
             if(!$forceCompile){
                 if(file_exists($cfilename)){

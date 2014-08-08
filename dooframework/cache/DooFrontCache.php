@@ -42,7 +42,7 @@
  *
  * Using getOnly or getExcept for full page cache:
  * <code>
- * //Use it in index.php
+ * //Use it in index_.php
  * $check = Doo::cache('front')->getOnly('/blog', 3600, true);
  *
  * //Start recording and cache the page.
@@ -123,8 +123,8 @@ class DooFrontCache{
 			$uri = substr($uri,0,strlen($uri)-1);
 		}
 
-		if(strpos($uri, $subfolder.'index.php')===0){
-			$index = 'index.php/';
+		if(strpos($uri, $subfolder.'index_.php')===0){
+			$index = 'index_.php/';
 		}
 
 		if(is_string($url)){
@@ -220,8 +220,8 @@ class DooFrontCache{
 			$uri = substr($uri,0,strlen($uri)-1);
 		}
 
-		if(strpos($uri, $subfolder.'index.php')===0){
-			$index = 'index.php/';
+		if(strpos($uri, $subfolder.'index_.php')===0){
+			$index = 'index_.php/';
 		}
 
 		if(is_string($url)){
@@ -438,9 +438,9 @@ class DooFrontCache{
 	public function flush($url, $recursive=false){
 		$deleteNum=0;
 		$subfolder = Doo::conf()->SUBFOLDER;
-		//delete index.php without /
+		//delete index_.php without /
 		if($url=='/'){
-			$f1 = $this->_directory.str_replace('/','-',$subfolder).'index.php.html';
+			$f1 = $this->_directory.str_replace('/','-',$subfolder).'index_.php.html';
 			$f2 = $this->_directory.str_replace('/','-',substr($subfolder,0,strlen($subfolder)-1)).'.html';
 			if(file_exists($f1)){
 				unlink( $f1 );
@@ -458,15 +458,15 @@ class DooFrontCache{
 			$oriUrl = $url = substr($url,1, strlen($url));
 
 		$fname = $this->_directory.str_replace('/','-',$subfolder.$url).'.html';
-		$fname2 = $this->_directory.str_replace('/','-',$subfolder.'index.php/'.$url).'.html';
+		$fname2 = $this->_directory.str_replace('/','-',$subfolder.'index_.php/'.$url).'.html';
 
-		//delete cached written without index.php
+		//delete cached written without index_.php
 		if(file_exists($fname)){
 			unlink( $fname );
 			$deleteNum++;
 		}
 
-		//delete cached written with index.php
+		//delete cached written with index_.php
 		if(file_exists($fname2)){
 			unlink( $fname2 );
 			$deleteNum++;
@@ -474,7 +474,7 @@ class DooFrontCache{
 
 		if($recursive){
 			$oriUrl1 = str_replace('/','-',$subfolder.$oriUrl);
-			$oriUrl2 = str_replace('/','-',$subfolder.'index.php/'.$oriUrl);
+			$oriUrl2 = str_replace('/','-',$subfolder.'index_.php/'.$oriUrl);
 			//echo '<br><h1>'.$oriUrl1.'</h1><br>';
 			//echo '<br><h1>'.$oriUrl2.'</h1><br>';
 

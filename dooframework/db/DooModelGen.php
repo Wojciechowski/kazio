@@ -70,7 +70,7 @@ class DooModelGen{
         
 		$dbconf = Doo::db()->getDefaultDbConfig();
 		if(!isset($dbconf) || empty($dbconf)) {
-			echo "<html><head><title>DooPHP Model Generator - DB: Error</title></head><body bgcolor=\"#2e3436\"><span style=\"font-size:190%;font-family: 'Courier New', Courier, monospace;\"><span style=\"color:#fff;\">Please setup the DB first in index.php and db.conf.php</span></span>";
+			echo "<html><head><title>DooPHP Model Generator - DB: Error</title></head><body bgcolor=\"#2e3436\"><span style=\"font-size:190%;font-family: 'Courier New', Courier, monospace;\"><span style=\"color:#fff;\">Please setup the DB first in index_.php and db.conf.php</span></span>";
 			exit;
 		}
 

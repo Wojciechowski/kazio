@@ -28,7 +28,7 @@ class DooSiteMagic{
      */
     public static function displayHome(){
         echo '<div style="font-family:\'Courier New\', Courier, monospace;"><h1>It Works!</h1>';
-        echo '<h3>What now?</h3><p><a href="'. Doo::conf()->APP_URL .'tools/sitemap.html">Generate Sitemap</a> | <a href="'. Doo::conf()->APP_URL .'index.php/gen_site">Generate Controllers</a> | <a href="'. Doo::conf()->APP_URL .'index.php/gen_model">Generate Models</a> | <a href="'. Doo::conf()->APP_URL .'tools/logviewer.html">View Logs</a> | <a href="'. Doo::conf()->APP_URL .'index.php/allurl">View All URLs</a></p>';
+        echo '<h3>What now?</h3><p><a href="'. Doo::conf()->APP_URL .'tools/sitemap.html">Generate Sitemap</a> | <a href="'. Doo::conf()->APP_URL .'index_.php/gen_site">Generate Controllers</a> | <a href="'. Doo::conf()->APP_URL .'index_.php/gen_model">Generate Models</a> | <a href="'. Doo::conf()->APP_URL .'tools/logviewer.html">View Logs</a> | <a href="'. Doo::conf()->APP_URL .'index_.php/allurl">View All URLs</a></p>';
         echo '<br/><strong>Suggested workflow:</strong><ol>
                   <li>Plan your website and draft a sitemap</li>
                   <li>Convert the sitemap into routes.conf.php</li>
@@ -67,11 +67,11 @@ class DooSiteMagic{
             foreach($r as $rname=>$value){
                 if($rname=='root' || $rname=='catchall'){
                     foreach($value as $rname2=>$value2){
-                        $rname_strip = 'index.php'.$rname2;
+                        $rname_strip = 'index_.php'.$rname2;
                         $data[$n++ ." $req"] = '<a href="'.Doo::conf()->APP_URL.$rname_strip.'">'.$rname2.'</a>';
                     }
                 }else{
-                    $rname_strip = 'index.php'.$rname;
+                    $rname_strip = 'index_.php'.$rname;
                     $data[$n++ ." $req"] = '<a href="'.Doo::conf()->APP_URL.$rname_strip.'">'.$rname.'</a>';
                 }
             }

@@ -221,8 +221,8 @@ class DooUriRouter{
      * Matching the route array with the request URI
      *
      * <p>Avoids preg_match for most cases to gain more performance.
-     * Trailing slashes '/' are ignored and stripped out. It can be used with or without the <b>index.php</b> in the URI.</p>
-     * <p>To use DooUriRouter without index.php, add the following code to your text.htaccess file if Apache mod_rewrite is enabled.</p>
+     * Trailing slashes '/' are ignored and stripped out. It can be used with or without the <b>index_.php</b> in the URI.</p>
+     * <p>To use DooUriRouter without index_.php, add the following code to your text.htaccess file if Apache mod_rewrite is enabled.</p>
      * <code>
      * RewriteEngine On
      *
@@ -230,8 +230,8 @@ class DooUriRouter{
      * RewriteCond %{REQUEST_FILENAME} !-f
      * RewriteCond %{REQUEST_FILENAME} !-d
 
-     * # otherwise forward it to index.php
-     * RewriteRule .* index.php
+     * # otherwise forward it to index_.php
+     * RewriteRule .* index_.php
      * RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
      * </code>
      */
@@ -263,10 +263,10 @@ class DooUriRouter{
 		$requestedUri = substr($requestedUri, strlen($subfolder)-1);
 		//$this->log('Trimmed off subfolder from Request Uri to give: ' . $requestedUri);
 
-		// Remove index.php from URL if it exists
-		if (0 === strpos($requestedUri, '/index.php')) {
+		// Remove index_.php from URL if it exists
+		if (0 === strpos($requestedUri, '/index_.php')) {
 			$requestedUri = substr($requestedUri, 10);
-			//$this->log('Trimmed off the /index.php from Request Uri to give: ' . $requestedUri);
+			//$this->log('Trimmed off the /index_.php from Request Uri to give: ' . $requestedUri);
 			if ($requestedUri == '') {
 				$requestedUri = '/';
 			}
@@ -581,9 +581,9 @@ class DooUriRouter{
         if( $subfolder!='/' )
             $uri = substr($uri, strlen($subfolder));
 
-        //remove index.php/ from the URI if exist
-        if(strpos($uri, 'index.php/')===0)
-            $uri = substr($uri, strlen('index.php/'));
+        //remove index_.php/ from the URI if exist
+        if(strpos($uri, 'index_.php/')===0)
+            $uri = substr($uri, strlen('index_.php/'));
 
         //strip out the GET variable part if start with /?
         if($pos = strpos($uri, '/?')){

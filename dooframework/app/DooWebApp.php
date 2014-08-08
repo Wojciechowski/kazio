@@ -37,7 +37,7 @@ class DooWebApp{
      /**
      * Handles the routing process.
      * Auto routing, sub folder, subdomain, sub folder on subdomain are supported.
-     * It can be used with or without the <i>index.php</i> in the URI
+     * It can be used with or without the <i>index_.php</i> in the URI
      * @return mixed HTTP status code such as 404 or URL for redirection
      */
     public function routeTo(){
@@ -274,7 +274,7 @@ class DooWebApp{
      *
      * <p>If class name is different from controller filename:</p>
      * <code>
-     * # filename is index.php, class name is Admin
+     * # filename is index_.php, class name is Admin
      * Doo::app()->module(array('index', 'Admin'), 'renderTop');
      *
      * # in a sub folder
